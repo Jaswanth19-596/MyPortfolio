@@ -1,0 +1,60 @@
+.section-universities {
+  padding: 4.8rem;
+}
+
+.paragraph {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 300;
+  color: var(--grey-color);
+  font-family: "Libre Baskerville", serif;
+  width: 70rem;
+  margin: 0 auto;
+  line-height: 1.5;
+  margin-bottom: 3.6rem;
+}
+
+.navigation-list {
+  list-style-type: none;
+  width: min-content;
+  display: flex;
+  gap: 3.6rem;
+  margin: 0 auto;
+}
+
+.navigation-list li {
+  border: 2px solid var(--grey-color);
+  border-radius: 3px;
+  padding: 1.5rem 3rem;
+  font-size: 1.6rem;
+  transition: transform 0.5s;
+}
+
+.navigation-list li:hover {
+  background-color: var(--red-color);
+  cursor: pointer;
+  color: white;
+  border: 2px solid transparent;
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+/* 700px */
+@media (max-width: 43.75em) {
+  .paragraph {
+    width: 90%;
+    padding: 3rem 1rem;
+  }
+
+  .section-universities {
+    padding: 1.2rem;
+  }
+}
+
+/* 600px */
+@media (max-width: 37.5em) {
+  .navigation-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

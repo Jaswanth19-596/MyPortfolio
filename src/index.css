@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+:root {
+  --grey-color: #384143;
+  --grey-color-icon: #4a5759;
+  --about-background: #fafafa;
+  --skills-background: #e7e7e7;
+  --red-color: #a3111c;
+}
+
+/* Utilities*/
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.2rem;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 3.2rem;
+}
+.u-margin-bottom-large {
+  margin-bottom: 6.4rem;
+}
+
+.heading-tertiary {
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: var(--grey-color);
+}
+
+.heading-fourth {
+  color: var(--grey-color);
+  font-size: 1.8rem;
+}
+
+span {
+  color: #a3111c;
+}
