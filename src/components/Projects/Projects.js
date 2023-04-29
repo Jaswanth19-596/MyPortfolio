@@ -1,14 +1,17 @@
 import React from "react";
 import styles from "./Projects.module.css";
 import Project from "../Project/Project";
-import NatoursImage from "./../../assests/images/Natours.JPG";
-import OmnifoodImage from "./../../assests/images/omnifood.JPG";
-import RecipeDetailsImage from "./../../assests/images/RecipeDetails.JPG";
+import ConverseAIImage from "./../../assests/images/converseAI.jpg";
+import OnlineVotingSystemImage from "./../../assests/images/onlinevotingproject.jpg";
 
 const projects = [
-  { image: NatoursImage, title: "Natours", color: "#74cf92" },
-  { image: OmnifoodImage, title: "Omnifood", first: true, color: "#e67f22" },
-  { image: RecipeDetailsImage, title: "Recipe Details", color: "#f6a184" },
+  { image: ConverseAIImage, title: "Converse AI", color: "#74cf92" },
+  {
+    image: OnlineVotingSystemImage,
+    title: "Omnifood",
+    first: true,
+    color: "#e67f22",
+  },
 ];
 
 const Projects = () => {

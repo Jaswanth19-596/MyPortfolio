@@ -18,9 +18,9 @@ const Header = (props) => {
       }`}
     >
       <div className={styles["brand-container"]}>
-        <p className={styles["logo-container"]}>MJ</p>
+        <p className={styles["logo-container"]}>MD</p>
         <div className={styles.title}>
-          <p className={styles["title--main"]}>Mada Jaswanth</p>
+          <p className={styles["title--main"]}>Marella Dhuvya</p>
           <p className={styles["title--sub"]}>Software Developer</p>
         </div>
       </div>
