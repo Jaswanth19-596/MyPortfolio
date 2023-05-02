@@ -22,7 +22,7 @@ const Project = (props) => {
             }}
             className={styles["card-back-inside"]}
           >
-            <Link to="" className={styles["visit"]}>
+            <Link to={props.github} className={styles["visit"]} target="_blank">
               <FaGithubSquare className={styles["github-icon"]} />{" "}
             </Link>
           </div>
@@ -34,15 +34,12 @@ const Project = (props) => {
         <p className={styles["project-title"]} style={{ color: props.color }}>
           {props.title}
         </p>
-        <p className={styles["project-description"]}>
-          Dopefolio is a successful Open-Source project that I created which
-          have been featured on some of the biggest tech sites like CSS-Tricks,
-          Hostinger, etc & used by thousands of developers globally
-        </p>
+        <p className={styles["project-description"]}>{props.description}</p>
         <Link
           style={{ color: `${props.color}` }}
-          to=""
+          to={props.project}
           className={styles["link"]}
+          target="_blank"
         >
           View Website
         </Link>
