@@ -13,7 +13,7 @@ const SectionAbout = (props) => {
         <div className={styles["text-container"]}>
           <p className={styles["about-me-text"]}>About Me</p>
           <h1 className={styles["about-me-heading"]}>
-            I'm <span> Jaswanth</span> , A Software Developer and Gamer
+            I'm <span> Dhuvya</span> , A Software Developer and Crafts Maker
           </h1>
         </div>
       </div>
