@@ -8,6 +8,9 @@ const Footer = () => {
       <div className={`container ${styles.footer}`}>
         <div className={styles["footer-text"]}>
           <p className={styles.thanks}>Thanks for visiting!</p>
+          <p className={styles.copyright}>
+            By Jaswanth - Founder and CEO of nothing
+          </p>
         </div>
         <ul className={styles.iconlist}>
           <li>

@@ -1,7 +1,17 @@
 import Skill from "./Skill";
 import styles from "./Skills.module.css";
 
-const skills = ["html", "css", "php", "Data structures", "Java", "C"];
+const skills = [
+  "html",
+  "css",
+  "Javascript",
+  "react",
+  "node js",
+  "Data structures",
+  "Java",
+  "problem solving",
+  "Responsive web design",
+];
 
 const Skills = () => {
   return (

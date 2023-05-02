@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SectionAbout.module.css";
 // import croppedImage from "./../../images/cropped-image.jpg";
-import image from "./../../assests/images/profile.jpg";
+import image from "./../../assests/images/myphoto.jpg";
 
 const SectionAbout = (props) => {
   return (
@@ -13,7 +13,7 @@ const SectionAbout = (props) => {
         <div className={styles["text-container"]}>
           <p className={styles["about-me-text"]}>About Me</p>
           <h1 className={styles["about-me-heading"]}>
-            I'm <span> Dhuvya</span> , A Software Developer and Crafts Maker
+            I'm <span> Jaswanth</span> , A Software Developer and Gamer
           </h1>
         </div>
       </div>
