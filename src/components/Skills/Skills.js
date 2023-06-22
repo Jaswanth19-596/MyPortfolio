@@ -5,12 +5,18 @@ const skills = [
   "html",
   "css",
   "Javascript",
-  "react",
-  "node js",
+  "React Js",
+  "Node Js",
   "Data structures",
-  "Java",
-  "problem solving",
-  "Responsive web design",
+  "Bootstrap",
+   "Java",
+  "Problem Solving",
+  "Mongo DB",
+  "SQL",
+  "REST API's",
+  "Python",
+  "Git",
+  "Github",
 ];
 
 const Skills = () => {

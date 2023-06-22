@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SectionAbout.module.css";
 // import croppedImage from "./../../images/cropped-image.jpg";
-import image from "./../../assests/images/myphoto.jpg";
+import image from "./../../assests/images/profile1-min.jpg";
 
 const SectionAbout = (props) => {
   return (

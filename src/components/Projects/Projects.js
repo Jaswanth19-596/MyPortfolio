@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "./Projects.module.css";
 import Project from "../Project/Project";
-import NatoursImage from "./../../assests/images/Natours.JPG";
-import RecipeDetailsImage from "./../../assests/images/RecipeDetails.JPG";
-import OmnifoodImage from "./../../assests/images/omnifood.JPG";
-import OnlineVotingSystemImage from "./../../assests/images/onlinevotingproject.jpg";
+import NatoursImage from "./../../assests/images/Natours-min.JPG";
+import RecipeDetailsImage from "./../../assests/images/RecipeDetails-min.JPG";
+import OmnifoodImage from "./../../assests/images/omnifood-min.JPG";
 
 const projects = [
   {
