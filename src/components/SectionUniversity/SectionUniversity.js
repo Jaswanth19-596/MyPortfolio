@@ -6,8 +6,7 @@ const SectionUniversity = (props) => {
     <section>
       <div className={`container ${styles["section-universities"]}`}>
         <h3 className={styles.paragraph}>
-          Mada Jaswanth is a Computer Science student attending Tirumala
-          Engineering College, Narasaraopet
+          Mada Jaswanth is a Computer Science student attending Purdue University Northwest, Hammond, USA.
         </h3>
         <ul className={styles["navigation-list"]}>
           <li>Coding</li>
