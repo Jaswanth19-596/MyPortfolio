@@ -1,29 +1,32 @@
-import Skill from "./Skill";
-import styles from "./Skills.module.css";
+import './skills.css';
 
-const skills = [
-  "html",
-  "css",
-  "Javascript",
-  "React Js",
-  "Node Js",
-  "Data structures",
-  "Bootstrap",
-   "Java",
-  "Problem Solving",
-  "Mongo DB",
-  "SQL",
-  "REST API's",
-  "Python",
-  "Git",
-  "Github",
-];
+// const skills = [
+//   'html',
+//   'css',
+//   'Javascript',
+//   'React Js',
+//   'Node Js',
+//   'Data structures',
+//   'Bootstrap',
+//   'Java',
+//   'Problem Solving',
+//   'Mongo DB',
+//   'SQL',
+//   "REST API's",
+//   'Python',
+//   'Git',
+//   'Github',
+// ];
 
-const Skills = () => {
+const Skills = (props) => {
+  const skills = props.skills;
+  const opposite = props.opposite;
   return (
-    <ul className={styles["skills-list"]}>
+    <ul className={`skills ${opposite ? 'opposite' : ''}`}>
       {skills.map((skill) => (
-        <Skill skill={skill} key={skill} />
+        <div key={skill} className={`skill`}>
+          {skill}
+        </div>
       ))}
     </ul>
   );

@@ -1,0 +1,29 @@
+.school-logo-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 15rem;
+}
+
+.school-logo {
+  width: 7rem;
+  height: 7rem;
+}
+
+.education-container {
+  padding: 2rem;
+}
+
+.education-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.education {
+  display: flex;
+  border: 2px solid var(--grey-color);
+  border-radius: 2rem;
+  /* margin-bottom: 2rem; */
+  padding: 2rem;
+}

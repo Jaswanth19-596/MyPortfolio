@@ -1,0 +1,73 @@
+.skills {
+  display: inline-block;
+  animation: scroll 50s linear infinite;
+}
+
+.opposite {
+  animation: scrollright 50s linear infinite;
+}
+
+.skill {
+  padding: 1.2rem 2.4rem;
+  background-color: var(--skills-background);
+  font-size: 1.4rem;
+  margin: 1.2rem;
+  border-radius: 5px;
+  text-transform: capitalize;
+  background-image: linear-gradient(#333, #333);
+  display: inline-block;
+  color: #fff;
+  font-weight: 500;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  border-radius: 10rem;
+  z-index: 100;
+}
+
+.skill:hover {
+  color: black;
+  background-image: linear-gradient(to right bottom, #cc1c29, #a3111c);
+  transform: scale(1.1) translateY(-0.4rem);
+  background-color: yellow;
+}
+skill {
+  padding: 1.2rem 2.4rem;
+  background-color: var(--skills-background);
+  font-size: 1.4rem;
+  margin: 1.2rem;
+  border-radius: 5px;
+  text-transform: capitalize;
+  background-image: linear-gradient(#333, #333);
+  display: inline-block;
+  color: #fff;
+  font-weight: 500;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.skill:hover {
+  color: black;
+  background-image: linear-gradient(to right bottom, #cc1c29, #a3111c);
+  transform: scale(1.1) translateY(-0.4rem);
+  background-color: yellow;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollright {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

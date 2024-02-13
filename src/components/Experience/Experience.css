@@ -1,0 +1,26 @@
+.experience-container {
+  padding: 2rem;
+}
+
+.logo-container {
+  display: flex;
+  gap: 2rem;
+  color: var(--grey-color);
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.work-icon {
+  font-size: 2rem;
+}
+
+.experience {
+  display: flex;
+  border: 2px solid var(--grey-color);
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.experience:hover {
+  cursor: pointer;
+}

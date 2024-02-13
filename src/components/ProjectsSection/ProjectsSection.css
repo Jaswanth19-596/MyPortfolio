@@ -1,0 +1,31 @@
+.tab-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #384143;
+  border-radius: 10rem;
+}
+
+.tab {
+  padding: 2rem;
+  list-style-type: none;
+  text-align: center;
+  border-radius: 11rem;
+}
+
+.tab:hover {
+  cursor: pointer;
+  color: pink;
+}
+
+.active-tab {
+  background-color: var(--about-background);
+}
+
+.projects-container {
+  border-top: none;
+  min-height: 50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid var(--grey-color); */
+}
