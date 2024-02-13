@@ -4,6 +4,8 @@ import NatoursImage from './../../assests/images/Natours-min.JPG';
 import RecipeDetailsImage from './../../assests/images/RecipeDetails-min.JPG';
 import OmnifoodImage from './../../assests/images/omnifood-min.JPG';
 import CartifyImage from './../../assests/images/cartify.PNG';
+import CreditCardImage from './../../assests/images/creditcard.jfif';
+import EmailSpamImage from './../../assests/images/emailspam.png';
 import { useState } from 'react';
 
 const frontendProjects = [
@@ -54,13 +56,22 @@ const fullStackProjects = [
 
 const dataScienceProjects = [
   {
-    image: CartifyImage,
-    title: 'ECartify',
-    githubLink: 'https://github.com/Jaswanth19-596/Ecommerce-Frontend',
-    projectLink: 'https://ecartify.netlify.app',
+    image: CreditCardImage,
+    title: 'Credit Card Fraud Detection',
+    githubLink: 'https://github.com/Jaswanth19-596/Credit-Card-Fraud-Detection/',
+    projectLink: 'https://github.com/Jaswanth19-596/Credit-Card-Fraud-Detection/',
     color: '#366880',
     description:
-      'A full stack web application which is developed using React JS,Node Js, Express Js and Mongo DB.A fully fledged application that can perform all the activities that are generally performed by a ECOMMERCE applications like AMAZON , FLIPKART',
+    'This project aims to detect fraudulent credit card transactions using machine learning techniques. It utilizes a dataset containing transactions made by credit cards in September 2013 by European cardholders. The dataset presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions.'
+  },
+  {
+    image: EmailSpamImage,
+    title: 'Email Spam Detection',
+    githubLink: 'https://github.com/Jaswanth19-596/Email-Spam-Classifier',
+    projectLink: 'https://github.com/Jaswanth19-596/Email-Spam-Classifier',
+    color: '#366880',
+    description:
+    'This project is a simple Email/SMS Spam Classifier built using natural language processing (NLP) techniques to classify messages as spam or not spam (ham).'
   },
 ];
 
@@ -80,7 +91,7 @@ const ProjectsSection = function () {
     setProjects(tempProjects);
   };
   return (
-    <div className="container">
+    <div className="container padding-container">
       <h3 className="heading-tertiary u-center-text u-margin-bottom-large">
         Featured Projects
       </h3>
@@ -91,7 +102,7 @@ const ProjectsSection = function () {
             toggleTab(1);
           }}
         >
-          Frontend Projects
+          <p className='project-type'>Frontend Projects</p>
         </li>
         <li
           className={`tab ${activeTab === 2 ? 'active-tab' : ''}`}
@@ -99,7 +110,8 @@ const ProjectsSection = function () {
             toggleTab(2);
           }}
         >
-          Full Stack Projects
+          <p className='project-type'>Full Stack Projects</p>
+  
         </li>
         <li
           className={`tab ${activeTab === 3 ? 'active-tab' : ''}`}
@@ -107,7 +119,7 @@ const ProjectsSection = function () {
             toggleTab(3);
           }}
         >
-          Data Science/Machine Learning Projects
+          <p className='project-type'>DS/ML Projects</p>
         </li>
         <li
           className={`tab ${activeTab === 4 ? 'active-tab' : ''}`}
@@ -115,7 +127,7 @@ const ProjectsSection = function () {
             toggleTab(4);
           }}
         >
-          Cloud Computing Projects
+          <p className='project-type'>Cloud Projects</p>
         </li>
       </ul>
 

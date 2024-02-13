@@ -34,7 +34,7 @@ const Project = (props) => {
         <p className={styles["project-title"]} style={{ color: props.color }}>
           {props.title}
         </p>
-        <p className={styles["project-description"]}>{props.description}</p>
+        <p className={styles["project-description"]}>{props.description.slice(0,250)}...</p>
         <Link
           style={{ color: `${props.color}` }}
           to={props.project}
