@@ -17,13 +17,23 @@
 .education-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .education {
   display: flex;
   border: 2px solid var(--grey-color);
   border-radius: 2rem;
-  /* margin-bottom: 2rem; */
   padding: 2rem;
+  box-shadow: 0 5px 10px var(--grey-color);
+  transition: all 0.3s;
+}
+
+.education:hover{
+  background-image: linear-gradient(to right, #a3111c, #4f0408);
+  color : white;
+  transform: scale(1.01);
+  border : 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 10px 15px var(--grey-color);
 }

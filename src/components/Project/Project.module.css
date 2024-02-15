@@ -3,7 +3,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
+  animation: project-slide-up 2s;
 }
+
+@keyframes project-slide-up {
+
+  0%{
+    transform: translateY(100px);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
+  
+}
+
+
+
 
 .image-container {
   padding: 5rem 2rem;

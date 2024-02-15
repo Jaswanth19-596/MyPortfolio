@@ -6,7 +6,7 @@ import OmnifoodImage from './../../assests/images/omnifood-min.JPG';
 import CartifyImage from './../../assests/images/cartify.PNG';
 import CreditCardImage from './../../assests/images/creditcard.jfif';
 import EmailSpamImage from './../../assests/images/emailspam.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const frontendProjects = [
   {
@@ -80,6 +80,7 @@ const cloudProjects = [];
 const ProjectsSection = function () {
   const [activeTab, setActiveTab] = useState(1);
   const [projects, setProjects] = useState(frontendProjects);
+  const [animationKey, setAnimationKey] = useState(0);
 
   const toggleTab = (id) => {
     setActiveTab(id);
@@ -89,7 +90,9 @@ const ProjectsSection = function () {
     else if (id === 3) tempProjects = dataScienceProjects;
     else if (id === 4) tempProjects = cloudProjects;
     setProjects(tempProjects);
+    setAnimationKey((prevKey) => prevKey + 1);
   };
+
   return (
     <div className="container padding-container">
       <h3 className="heading-tertiary u-center-text u-margin-bottom-large">
@@ -97,7 +100,7 @@ const ProjectsSection = function () {
       </h3>
       <ul className="tab-container">
         <li
-          className={`tab ${activeTab === 1 ? 'active-tab' : ''}`}
+          className={`tab ${activeTab === 1 ? 'active-tab1' : ''}`}
           onClick={() => {
             toggleTab(1);
           }}
@@ -105,7 +108,7 @@ const ProjectsSection = function () {
           <p className='project-type'>Frontend Projects</p>
         </li>
         <li
-          className={`tab ${activeTab === 2 ? 'active-tab' : ''}`}
+          className={`tab ${activeTab === 2 ? 'active-tab1' : ''}`}
           onClick={() => {
             toggleTab(2);
           }}
@@ -114,7 +117,7 @@ const ProjectsSection = function () {
   
         </li>
         <li
-          className={`tab ${activeTab === 3 ? 'active-tab' : ''}`}
+          className={`tab ${activeTab === 3 ? 'active-tab1' : ''}`}
           onClick={() => {
             toggleTab(3);
           }}
@@ -122,7 +125,7 @@ const ProjectsSection = function () {
           <p className='project-type'>DS/ML Projects</p>
         </li>
         <li
-          className={`tab ${activeTab === 4 ? 'active-tab' : ''}`}
+          className={`tab ${activeTab === 4 ? 'active-tab1' : ''}`}
           onClick={() => {
             toggleTab(4);
           }}
@@ -132,7 +135,7 @@ const ProjectsSection = function () {
       </ul>
 
       <div className="projects-container">
-        <Projects projects={projects} />
+      <Projects key={animationKey} projects={projects} />
       </div>
     </div>
   );
