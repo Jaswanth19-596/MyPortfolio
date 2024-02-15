@@ -2,6 +2,7 @@ import styles from "./Contact.module.css";
 import emailjs from "emailjs-com";
 import React, { useState, useRef } from "react";
 import LoadingSpinner from "./../LoadingSpinner/LoadingSpinner";
+import ContactMeImage from './../../assests/images/contact-me-final.png'
 import { FcApproval, FcCancel } from "react-icons/fc";
 
 const Contact = () => {
@@ -84,6 +85,9 @@ const Contact = () => {
 
   return (
     <div className="container">
+
+      <img className='contact-me-image' src={ContactMeImage} alt='contact-me' />
+
       {error && (
         <div className={styles["new-container"]}>
           <p className={styles["email-fail"]}>

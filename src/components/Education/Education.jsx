@@ -1,10 +1,9 @@
 import React from 'react';
-import styles from './Education.css';
+import './Education.css';
 import pnwlogo from './../../assests/images/pnwlogo.png';
 import teclogo from './../../assests/images/teclogo.png';
 import narayanalogo from './../../assests/images/narayanalogo.png';
 import sscrplogo from './../../assests/images/sscrplogo.png';
-import { MdWork } from 'react-icons/md';
 import { IoSchool } from 'react-icons/io5';
 
 function Education() {

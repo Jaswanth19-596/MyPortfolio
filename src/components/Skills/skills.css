@@ -22,6 +22,7 @@
   cursor: pointer;
   border-radius: 10rem;
   z-index: 100;
+  box-shadow: 0 10px 20px var(--grey-color);
 }
 
 .skill:hover {

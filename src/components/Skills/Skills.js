@@ -1,22 +1,5 @@
 import './skills.css';
 
-// const skills = [
-//   'html',
-//   'css',
-//   'Javascript',
-//   'React Js',
-//   'Node Js',
-//   'Data structures',
-//   'Bootstrap',
-//   'Java',
-//   'Problem Solving',
-//   'Mongo DB',
-//   'SQL',
-//   "REST API's",
-//   'Python',
-//   'Git',
-//   'Github',
-// ];
 
 const Skills = (props) => {
   const skills = props.skills;
