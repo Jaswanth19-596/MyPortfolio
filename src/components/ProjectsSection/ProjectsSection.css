@@ -24,27 +24,37 @@
   cursor: pointer;
 }
 
+.project-type{
+  border: 2px solid transparent;
+  padding: 1.5rem;
+}
+.project-type:hover{
+  border: 2px solid var(--red-color);
+  border-radius: 5rem;;
+  box-shadow: 0px 5px 30px var(--red-color);
+}
+
 .active-tab1 .project-type{
   border : 2px solid transparent;
-  transition: all 0.5s;
+  transition: all 2s;
 }
 
 
 .active-tab1 .project-type{
-  border: 2px solid var(--red-color);
-  border-radius: 5rem;;
-  box-shadow: 0px 15px 30px var(--red-color);
-  /* scale : 1.1; */
+  transform: scale(0.8);
+  border: 2px solid var(--black-color);
+  border-radius: 5rem;
+  background-color: var(--red-color);
+  color : white;
+  box-shadow: 1px 10px 20px var(--red-color);
 }
 
 .active-tab1 .project-type:hover{
-  box-shadow: 0px 15px 30px var(--red-color);
 
 }
 
-.project-type{
-  padding: 1rem;
-}
+
+
 
 .projects-container {
   padding-top: 5rem;
@@ -56,6 +66,23 @@
   animation: project-slide-up 1s;
 }
 
+
+/*700px*/
+@media (max-width: 50em) {
+  /* When there are no projects, the minimum height should be atleast 80rem*/
+  .projects-container{
+    min-height: 80rem;
+  }
+
+  /* Reducing the box shadow value when we are on mobile */
+  .active-tab1 .project-type{
+    border: 2px solid var(--red-color);
+    border-radius: 5rem;
+    box-shadow: 0px 10px 20px var(--red-color);
+  }
+}
+
+/* Animations */
 @keyframes project-slide-up {
 
   0%{
@@ -64,8 +91,7 @@
 
   100%{
     transform: translateY(0px);
-  }
-  
+  }  
 }
 
 

@@ -37,3 +37,11 @@
   cursor: pointer;
   box-shadow: 0 10px 15px var(--grey-color);
 }
+
+
+/*700px*/
+@media (max-width: 43.75em) {
+  .education-wrapper{
+    grid-template-columns: 1fr;
+  }
+}
