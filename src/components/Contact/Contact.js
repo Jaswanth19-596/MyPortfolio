@@ -4,6 +4,39 @@ import React, { useState, useRef } from "react";
 import LoadingSpinner from "./../LoadingSpinner/LoadingSpinner";
 import ContactMeImage from './../../assests/images/contact-me-final.png'
 import { FcApproval, FcCancel } from "react-icons/fc";
+import {Link} from 'react-router-dom';
+import { MdEmail } from "react-icons/md";
+import { FaDiscord } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
+import './Contact2.css';
+
+
+const socialMediaHandles = [
+  {
+    icon : <MdEmail className="icon"/>,
+    url : ''
+  },
+  {
+    icon : <FaDiscord className="icon"/>,
+    url : ''
+  },
+  {
+    icon : <FaInstagram className="icon"/>,
+    url : ''
+  },
+  {
+    icon : <FaLinkedin className="icon"/>,
+    url : ''
+  },
+  {
+    icon : <FaDiscord className="icon"/>,
+    url : ''
+  },
+]
+
+
 
 const Contact = () => {
   const form = useRef();
@@ -85,8 +118,34 @@ const Contact = () => {
 
   return (
     <div className="container">
+      <div className="top-container">
+        <div className="contact-me-text-container">
 
-      <img className='contact-me-image' src={ContactMeImage} alt='contact-me' />
+          <h3>Let's Talk</h3>
+          <p>If you have blocked me on all social media handles, You can contact me through the form below. And if you haven't blocked me, you can contact me through the social media handles.</p>
+
+          <div className="social-media-container">
+            {
+              socialMediaHandles.map(social => {
+              return <div className="social-media">
+                  <div className="social-media-icon-container">
+                    {socialMediaHandles.icon}
+                  </div>
+                  <div className="social-media-text-container">
+                    Email me at : madhajaswanth@gmail.com or Click : <Link>something</Link>
+
+                  </div>
+                </div>
+              })
+            }          
+          </div>
+        </div>
+
+
+        <div className="contact-me-image-container">
+          <img className='contact-me-image' src={ContactMeImage} alt='contact-me' />
+        </div>
+      </div>
 
       {error && (
         <div className={styles["new-container"]}>
