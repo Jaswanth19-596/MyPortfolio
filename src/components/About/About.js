@@ -54,14 +54,14 @@ const About = () => {
             Get to know me
           </h4>
           <p className={'para'}>
-            I'm a Frontend Web Developer building the Front-end of Websites and
-            Web Applications that leads to the success of the overall product.
-            Check out some of my work in the Projects section.
+            I'm a Computer Science Engineer who wants to explore different fields of tech
+             and I always strive to solve user problems. I love to develop websites
+            I love problem solving, And I want to be a Competitive Programmer in the future.
           </p>
           <p className={'para'}>
-            I also like sharing content related to the stuff that I have learned
-            over the years in Web Development so it can help other people of the
-            Dev Community. Feel free to Connect or Follow me on my Linkedin
+            During my bachelor's I explored the fields of Web Development and App Development and
+            now,during my Master's, I am exploring the the fields of Big Data, Machine Learning and
+            Cloud Computing.
           </p>
           <p className={'para'}>
             I'm open to Job opportunities where I can contribute, learn and

@@ -62,12 +62,13 @@
 
 .active {
   background-image: linear-gradient(to right, #a3111c, #4f0408);
-  color: white;
+  color: white ;
   cursor: pointer;
   border: 2px solid var(--red-color);
   box-shadow: 0 10px 30px var(--red-color);
   transform: rotate(-3deg);
 }
+
 
 .social-media:hover {
   background-image: linear-gradient(to right, #a3111c, #4f0408);
@@ -82,4 +83,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+
+/* 1000px */
+@media (max-width : 62.5em){
+  .contact-me-image {
+    height: 35rem;
+    /* background-color: red; */
+  }
+}
+/* 860px */
+@media (max-width : 53.75em){
+
+  .top-container{
+    grid-template-columns: 1fr;
+  }
 }

@@ -12,16 +12,47 @@ import { FaLinkedin } from 'react-icons/fa6';
 import { FaWhatsapp } from 'react-icons/fa';
 import './Contact2.css';
 
+
+const openGmail = ()=>{
+  const email = "madhajaswanth@gmail.com";
+  const gmailComposeUrl = 'https://mail.google.com/mail/u/0/?view=cm&fs=1&to=' + encodeURIComponent(email)
+  window.open(gmailComposeUrl, '_blank');
+}
+
+const openDiscord = ()=>{
+  const discordUsername = "jaswanth#1462";
+  var discordComposeUrl = 'https://discord.com/channels/@me/' + encodeURIComponent(discordUsername);
+  window.open(discordComposeUrl, '_blank')
+}
+
+const openLinkedin = ()=>{
+  const url = 'https://www.linkedin.com/in/jaswanthmadha/';
+  window.open(url, '_blank')
+}
+
+const openWhatsApp = ()=> {
+  // Replace 'PHONE_NUMBER' with the phone number you want to start the chat with (including country code)
+  var phoneNumber = '2194665564';
+  
+  // Construct the WhatsApp URL
+  var whatsappUrl = 'https://wa.me/' + phoneNumber;
+
+  // Open WhatsApp in a new tab
+  window.open(whatsappUrl, '_blank');
+}
+
 const socialMediaHandles = [
   {
     icon: <MdEmail className="icon" />,
     text: `Email me at : madhajaswanth@gmail.com or Click`,
     url: '',
+    onClick : openGmail
   },
   {
     icon: <FaDiscord className="icon" />,
-    text: `Discord me at : madhajaswanth@gmail.com or Click`,
+    text: `Discord me at : jaswanth1462 or Click`,
     url: '',
+    onClick : openDiscord
   },
   {
     icon: <FaInstagram className="icon" />,
@@ -30,13 +61,14 @@ const socialMediaHandles = [
   },
   {
     icon: <FaLinkedin className="icon" />,
-    text: `Ping me at : madhajaswanth@gmail.com or Click`,
-    url: '',
+    text: `Ping me at : jaswanthmadha or Click`,
+    url: 'https://www.linkedin.com/in/jaswanthmadha/',
+    onClick : openLinkedin
   },
   {
     icon: <FaWhatsapp className="icon" />,
     text: `Text me at : +1 219 466 5564 or Click`,
-    url: '',
+    onClick : openWhatsApp
   },
 ];
 
@@ -136,9 +168,7 @@ const Contact = () => {
         <div className="contact-me-text-container">
           <h3 className="contact-me-heading">Let's Talk</h3>
           <p className="contact-me-description">
-            If you have blocked me on all social media handles, You can contact
-            me through the form below. And if you haven't, you can contact me
-            with any one of the following one's.
+            It's crazy how we stopped using Pigeons to communicate. We can also do that, but I would prefer one of the following:
           </p>
 
           <div className="social-media-container">
@@ -146,6 +176,7 @@ const Contact = () => {
               return (
                 <div
                   className={`social-media ${active === index ? 'active' : ''}`}
+                  onClick={social.onClick}
                 >
                   <div className="social-media-icon-container">
                     {social.icon}

@@ -1,0 +1,93 @@
+.footer {
+  font-family: "Libre Baskerville", serif;
+  padding: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thanks {
+  font-size: 2rem;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  margin-bottom: 2.4rem;
+  letter-spacing: 2px;
+}
+
+.iconlist {
+  list-style: none;
+  display: flex;
+  gap: 3.6rem;
+}
+
+/* .icon {
+  font-size: 2.4rem;
+  color: var(--grey-color-icon);
+} */
+
+
+.downloadbutton{
+  padding : 1.5rem;
+  /* border : 2px solid transparent; */
+  background-color: transparent;
+  border-radius: 10rem;
+  transition: all 1s;
+  position: relative;
+}
+
+.downloadbutton:hover{
+  cursor: pointer;
+  background-image: linear-gradient(to right, #a3111c, #4f0408);
+  color : white;
+  border: 2px solid transparent;
+}
+
+.downloadbutton:hover::before{
+  content : '';
+  display: inline-block;
+  height : 100%;
+  width : 100%;
+  position: absolute;
+  top : 0;
+  left : 0;
+  border-radius: 10rem;
+  animation: fadeOut 1s;
+  z-index: -1;
+  background-color: var(--red-color);
+}
+
+.downloadbutton.fadeout-class::before{
+  content : '';
+  display: inline-block;
+  height : 100%;
+  width : 100%;
+  position: absolute;
+  top : 0;
+  left : 0;
+  border-radius: 10rem;
+  animation: fadeOut 1s;
+  z-index: -10;
+  background-color: var(--red-color);
+}
+
+
+@keyframes fadeOut {
+
+  0%{
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  100%{
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}

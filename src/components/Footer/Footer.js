@@ -1,28 +1,33 @@
-import React from "react";
-import styles from "./Footer.module.css";
-import { FaFacebook, FaInstagram, FaMailBulk } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import styles from "./Footer.css";
+import { saveAs } from "file-saver";
 
 const Footer = () => {
+
+  const [applyClass, setApplyClass] = useState(true);
+
+  const saveFile = ()=>{
+    const pdfURL = './Jaswanth_Resume.pdf';
+    saveAs(pdfURL, 'Jaswanth_Resume.pdf');
+  }
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setApplyClass(!applyClass)
+    }, 1000);
+  }, [applyClass])
+
+  console.log(applyClass)
+
   return (
     <footer>
-      <div className={`container ${styles.footer}`}>
-        <div className={styles["footer-text"]}>
-          <p className={styles.thanks}>Thanks for visiting!</p>
-          <p className={styles.copyright}>
-            By Jaswanth - Founder and CEO of nothing
-          </p>
+      <div className={`container footer`}>
+        <div className={`footer-text`}>
+          <p className={`thanks`}>Thanks for visiting!</p>
         </div>
-        <ul className={styles.iconlist}>
-          <li>
-            <FaFacebook className={styles.icon} />
-          </li>
-          <li>
-            <FaInstagram className={styles.icon} />
-          </li>
-          <li>
-            <FaMailBulk className={styles.icon} />
-          </li>
-        </ul>
+        <div>
+          <button className={`downloadbutton ${applyClass ? 'fadeout-class' : ''}`} onClick={saveFile}>Download Resume</button>
+        </div>
       </div>
     </footer>
   );
