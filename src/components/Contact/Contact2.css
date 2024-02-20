@@ -101,3 +101,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width : 37.5em){
+  .contact-me-image{
+    height : 30rem;
+  }
+}
