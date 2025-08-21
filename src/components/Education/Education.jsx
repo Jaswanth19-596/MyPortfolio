@@ -50,7 +50,11 @@ function Education() {
           return (
             <div className="education">
               <div className="school-logo-container">
-                <img className={`school-logo`} src={edu.logo} alt="pnw_logo" />
+                <img
+                  className={`school-logo-wide`}
+                  src={edu.logo}
+                  alt="pnw_logo"
+                />
               </div>
               <div className="text-container">
                 <h3 className="educationHeading">{edu.name}</h3>

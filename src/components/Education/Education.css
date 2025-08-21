@@ -5,9 +5,14 @@
   width: 15rem;
 }
 
-.school-logo {
+.school-logo-long {
+  width: 10rem;
+  height: 5rem;
+}
+
+.school-logo-wide {
   width: 7rem;
-  height: 7rem;
+  height: 5rem;
 }
 
 .education-container {
@@ -25,21 +30,20 @@
   border: 2px solid var(--grey-color);
   border-radius: 2rem;
   padding: 2rem;
-  box-shadow: 0 5px 10px var(--grey-color);
+  box-shadow: 0 1px 1px var(--grey-color);
   transition: all 0.3s;
 }
 
-.education:hover{
-  background-image: linear-gradient(to right, #a3111c, #4f0408);
-  color : white;
+.education:hover {
+  /* background-image: linear-gradient(to right, #a3111c, #4f0408); */
+  /* color: white; */
   transform: scale(1.01);
-  border : 2px solid transparent;
+  /* border: 2px solid transparent; */
   cursor: pointer;
-  box-shadow: 0 10px 15px var(--grey-color);
+  /* box-shadow: 0 10px 15px var(--grey-color); */
 }
 
-
-.educationHeading{
+.educationHeading {
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -47,7 +51,7 @@
 
 /*700px*/
 @media (max-width: 43.75em) {
-  .education-wrapper{
+  .education-wrapper {
     grid-template-columns: 1fr;
   }
 }
