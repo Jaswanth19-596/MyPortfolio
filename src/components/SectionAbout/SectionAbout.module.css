@@ -19,7 +19,7 @@
 }
 
 .about-me-heading {
-  font-size: 4.8rem;
+  font-size: 4rem;
   font-weight: 700;
   letter-spacing: 0px;
   line-height: 1.5;
@@ -33,10 +33,10 @@
 }
 
 .image {
-  width: 28rem;
-  height: 30rem;
+  width: 45rem;
+  height: 48rem;
 
-  margin-top: 5rem;
+  /* margin-top: 2rem; */
   display: inline-block;
   border-radius: 48%;
 }
