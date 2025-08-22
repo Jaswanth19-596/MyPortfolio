@@ -1,8 +1,7 @@
-import React from "react";
-import styles from "./Header.module.css";
-import { NavLink } from "react-router-dom";
-import { useState, useRef } from "react";
-import { FaGripLines, FaWindowClose } from "react-icons/fa";
+import React from 'react';
+import styles from './Header.module.css';
+import { NavLink } from 'react-router-dom';
+import { useState, useRef } from 'react';
 
 const Header = (props) => {
   const [showNav, setShowNav] = useState(false);
@@ -17,57 +16,13 @@ const Header = (props) => {
         showNav && styles.navopen
       }`}
     >
-      <div className={styles["brand-container"]}>
-        <p className={styles["logo-container"]}>MJ</p>
+      {/* <div className={styles['brand-container']}>
+        <p className={styles['logo-container']}>MJ</p>
         <div className={styles.title}>
-          <p className={styles["title--main"]}>Mada Jaswanth</p>
-          <p className={styles["title--sub"]}>Software Developer</p>
+          <p className={styles['title--main']}>Mada Jaswanth</p>
+          <p className={styles['title--sub']}>Software Developer</p>
         </div>
-      </div>
-
-      <ul className={styles["navigation-list"]}>
-        <li>
-          <NavLink
-            to=""
-            onClick={toggleNav}
-            className={({ isActive }) => (isActive ? styles["active"] : "")}
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="about"
-            onClick={toggleNav}
-            className={({ isActive }) => (isActive ? styles["active"] : "")}
-          >
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="projects"
-            onClick={toggleNav}
-            className={({ isActive }) => (isActive ? styles["active"] : "")}
-          >
-            Projects
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink
-            to="contact"
-            onClick={toggleNav}
-            className={({ isActive }) => (isActive ? styles["active"] : "")}
-          >
-            Contact
-          </NavLink>
-        </li>
-        <button className={styles["button"]}>
-          <FaWindowClose className={styles["close-icon"]} onClick={toggleNav} />
-        </button>
-      </ul>
-      <FaGripLines className={styles["menu-icon"]} onClick={toggleNav} />
+      </div> */}
     </header>
   );
 };

@@ -1,15 +1,59 @@
 .about-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   justify-items: center;
 }
 
 .text-container {
   padding: 3.2rem;
-  align-self: center;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 60rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.about-me-subheading {
+  font-size: 1.6rem;
+  color: var(--grey-color);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.about-me-paragraph {
+  font-size: 1.4rem;
+  color: var(--grey-color);
+  background-color: #f8f8f8;
+  border: 1px solid var(--grey-color);
+  border-radius: 1.6rem;
+  text-align: center;
+  padding: 1.6rem;
+  color: #495057;
+  width: 80rem;
+  line-height: 3rem;
+}
+
+.about-me-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about-me-button {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 200;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.about-me-button:hover {
+  background-color: white;
 }
 
 .about-me-text {
