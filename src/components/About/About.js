@@ -74,14 +74,11 @@ const About = () => {
           <h4 className="heading-fourth u-margin-bottom-medium">My Skills</h4>
           <div className={'skills-container'}>
             <Skills skills={coreskills} opposite={false} />
-            <Skills skills={coreskills} opposite={false} />
           </div>
           <div className={'skills-container'}>
             <Skills skills={AWSSkills} opposite={true} />
-            <Skills skills={AWSSkills} opposite={true} />
           </div>
           <div className={'skills-container'}>
-            <Skills skills={MLSkills} opposite={false} />
             <Skills skills={MLSkills} opposite={false} />
           </div>
         </div>

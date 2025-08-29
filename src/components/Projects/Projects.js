@@ -3,7 +3,7 @@ import styles from './Projects.module.css';
 import Project from '../Project/Project';
 
 const Projects = (props) => {
-  const { projects } = props;
+  const { projects, onProjectClick } = props;
 
   if (projects.length === 0) {
     return <h2>On the way !!</h2>;
@@ -16,12 +16,11 @@ const Projects = (props) => {
           <Project
             key={index}
             title={project.title}
-            description={project.description}
-            image={project.image}
-            first={project.first}
-            color={project.color}
+            technologies={project.technologies}
+            problem={project.problem}
             github={project.githubLink}
             project={project.projectLink}
+            onProjectClick={() => onProjectClick(project)}
           />
         ))}
       </div>

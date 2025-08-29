@@ -16,13 +16,7 @@ const Header = (props) => {
         showNav && styles.navopen
       }`}
     >
-      {/* <div className={styles['brand-container']}>
-        <p className={styles['logo-container']}>MJ</p>
-        <div className={styles.title}>
-          <p className={styles['title--main']}>Mada Jaswanth</p>
-          <p className={styles['title--sub']}>Software Developer</p>
-        </div>
-      </div> */}
+      \
     </header>
   );
 };

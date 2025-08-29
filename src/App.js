@@ -2,19 +2,18 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './pages/RootLayout';
 import HomePage from './pages/HomePage';
-import ProjectPage from './pages/ProjectPage';
-import ContactPage from './pages/ContactPage';
-import AboutPage from './pages/AboutPage';
+import ProjectsSection from './components/ProjectsSection/ProjectsSection';
+import Contact from './components/Contact/Contact';
+import About from './components/About/About';
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'projects', element: <ProjectPage /> },
-      { path: 'contact', element: <ContactPage /> },
-      { path: 'about', element: <AboutPage /> },
-      { path: 'Testing', element: <AboutPage /> },
+      { path: 'projects', element: <ProjectsSection /> },
+      { path: 'contact', element: <Contact /> },
+      { path: 'about', element: <About /> },
     ],
   },
 ]);
