@@ -80,9 +80,9 @@ SPACING
 }
 
 .navigation-list li a:hover {
-  border-bottom: 2px solid #be1924;
+  border-bottom: 2px solid #3b82f6;
   transform: scale(1.05);
-  color: #be1924;
+  color: #3b82f6;
 }
 
 .button {
@@ -147,13 +147,13 @@ SPACING
 
   .navigation-list li a:hover,
   .navigation-list li a:active {
-    border-bottom: 2px solid #a3111c;
+    border-bottom: 2px solid #3b82f6;
   }
 }
 
 .active {
-  color: #be1924 !important;
-  border-bottom: 2px solid #be1924 !important;
+  color: #3b82f6 !important;
+  border-bottom: 2px solid #3b82f6 !important;
   transform: scale(1.1);
   font-weight: 600;
 }

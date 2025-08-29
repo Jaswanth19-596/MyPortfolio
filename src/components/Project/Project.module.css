@@ -1,24 +1,27 @@
 .project-card {
-  background: #1a1a1a;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(25px);
   border-radius: 12px;
   padding: 24px;
   color: white;
   transition: all 0.3s ease;
-  border: 1px solid #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   height: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  border-color: #3a3a3a;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .project-title {
-  font-size: 1.9rem;
+  font-size: 2.2rem;
   font-weight: 600;
   color: #ffffff;
   margin: 0;
@@ -32,11 +35,13 @@
 }
 
 .tech-tag {
-  background: #333333;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: #cccccc;
-  padding: 8px 16px;
+  padding: 10px 18px;
   border-radius: 16px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
@@ -45,7 +50,7 @@
 }
 
 .section-label {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #888888;
   margin-bottom: 12px;
   font-weight: 600;
@@ -54,18 +59,19 @@
 
 .problem-text {
   color: #cccccc;
-  line-height: 1.5;
-  font-size: 1.2rem;
+  line-height: 1.6;
+  font-size: 1.4rem;
   margin: 0;
 }
 
 .view-details-btn {
-  background: #333333;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #ffffff;
-  border: none;
-  padding: 16px 28px;
+  padding: 18px 32px;
   border-radius: 8px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -74,7 +80,8 @@
 }
 
 .view-details-btn:hover {
-  background: #404040;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-1px);
 }
 
@@ -90,20 +97,20 @@
   }
   
   .project-title {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
   
   .tech-tag {
-    font-size: 0.75rem;
-    padding: 3px 10px;
+    font-size: 1rem;
+    padding: 8px 14px;
   }
   
   .problem-text {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   
   .view-details-btn {
-    padding: 10px 16px;
-    font-size: 0.85rem;
+    padding: 14px 22px;
+    font-size: 1.1rem;
   }
 }
