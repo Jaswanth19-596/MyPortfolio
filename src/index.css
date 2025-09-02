@@ -15,20 +15,24 @@ html {
 /* Improved base font sizes for better readability */
 @media (max-width: 768px) {
   html {
-    font-size: 65%;
+    font-size: 75%;
   }
 }
 
 @media (max-width: 480px) {
   html {
-    font-size: 67%;
+    font-size: 85%;
   }
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #000000;
-  background: radial-gradient(circle at center, rgba(20, 20, 20, 0.9) 0%, rgba(0, 0, 0, 1) 100%);
+  background: radial-gradient(
+    circle at center,
+    rgba(20, 20, 20, 0.9) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 .container {
@@ -40,7 +44,6 @@ body {
   --grey-color-icon: #4a5759;
   --skills-background: #e7e7e7;
   --about-background: #fafafa;
-  --red-color: #3b82f6;
 }
 
 /* Utilities*/
@@ -68,8 +71,4 @@ body {
 .heading-fourth {
   color: var(--grey-color);
   font-size: 2.1rem;
-}
-
-span {
-  color: #3b82f6;
 }

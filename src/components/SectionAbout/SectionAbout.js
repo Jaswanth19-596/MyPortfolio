@@ -79,13 +79,17 @@ const SectionAbout = (props) => {
               <li>Built scalable web applications with MongoDB and AWS. </li>
             </ul>
 
-            <div className={styles['hero-buttons']}>
+            <div>
               <a href="mailto:madhajaswanth@gmail.com">
                 <button className={styles['primary-button']}>
                   {isMobile ? '📧 Email' : 'madhajaswanth@gmail.com'}
                 </button>
               </a>
-              <a href="https://www.linkedin.com/in/jaswanthmadha/" target="tab">
+              <a
+                href="https://www.linkedin.com/in/jaswanthmadha/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className={styles['secondary-button']}>LinkedIn</button>
               </a>
               <button
