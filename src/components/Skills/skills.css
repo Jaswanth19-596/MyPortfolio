@@ -27,7 +27,7 @@
 
 .skill:hover {
   color: black;
-  background-image: linear-gradient(to right bottom, #cc1c29, #a3111c);
+  background-image: linear-gradient(to right bottom, #60a5fa, #3b82f6);
   transform: scale(1.1) translateY(-0.4rem);
   background-color: yellow;
 }
@@ -48,7 +48,7 @@ skill {
 
 .skill:hover {
   color: black;
-  background-image: linear-gradient(to right bottom, #cc1c29, #a3111c);
+  background-image: linear-gradient(to right bottom, #60a5fa, #3b82f6);
   transform: scale(1.1) translateY(-0.4rem);
   background-color: yellow;
 }

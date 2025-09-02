@@ -4,6 +4,7 @@ import resumePDF from './../../assests/resume/Jaswanth_Mada_Resume.pdf';
 
 const SectionAbout = (props) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const handleDownload = () => {
     const link = document.createElement('a');
@@ -27,8 +28,16 @@ const SectionAbout = (props) => {
       }
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -73,7 +82,7 @@ const SectionAbout = (props) => {
             <div className={styles['hero-buttons']}>
               <a href="mailto:madhajaswanth@gmail.com">
                 <button className={styles['primary-button']}>
-                  madhajaswanth@gmail.com
+                  {isMobile ? '📧 Email' : 'madhajaswanth@gmail.com'}
                 </button>
               </a>
               <a href="https://www.linkedin.com/in/jaswanthmadha/" target="tab">

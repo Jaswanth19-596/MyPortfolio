@@ -17,7 +17,7 @@ const Projects = (props) => {
             key={index}
             title={project.title}
             technologies={project.technologies}
-            problem={project.problem}
+            problem={project.problem_outline}
             github={project.githubLink}
             project={project.projectLink}
             onProjectClick={() => onProjectClick(project)}

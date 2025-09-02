@@ -35,12 +35,8 @@
 }
 
 .education:hover {
-  /* background-image: linear-gradient(to right, #a3111c, #4f0408); */
-  /* color: white; */
   transform: scale(1.01);
-  /* border: 2px solid transparent; */
   cursor: pointer;
-  /* box-shadow: 0 10px 15px var(--grey-color); */
 }
 
 .educationHeading {

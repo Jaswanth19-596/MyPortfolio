@@ -107,17 +107,6 @@ const AIBackground = () => {
         ctx.fill();
       }
 
-      // Add matrix-like code rain effect
-      const codeChars = '01';
-      ctx.font = '12px monospace';
-      for (let i = 0; i < 30; i++) {
-        const x = Math.random() * canvas.width;
-        const y = (time * 100 + i * 50) % canvas.height;
-        const char = codeChars[Math.floor(Math.random() * codeChars.length)];
-        
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.1 + Math.random() * 0.1})`;
-        ctx.fillText(char, x, y);
-      }
 
       animationId = requestAnimationFrame(animate);
     };
