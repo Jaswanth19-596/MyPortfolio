@@ -15,13 +15,13 @@ html {
 /* Improved base font sizes for better readability */
 @media (max-width: 768px) {
   html {
-    font-size: 75%;
+    font-size: 82%;
   }
 }
 
 @media (max-width: 480px) {
   html {
-    font-size: 85%;
+    font-size: 92%;
   }
 }
 

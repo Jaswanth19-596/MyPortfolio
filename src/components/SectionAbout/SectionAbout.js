@@ -5,12 +5,21 @@ import resumePDF from './../../assests/resume/Jaswanth_Mada_Resume.pdf';
 const SectionAbout = (props) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [showResumePreview, setShowResumePreview] = useState(false);
 
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = resumePDF;
     link.download = 'Jaswanth_Mada_Resume.pdf';
     link.click();
+  };
+
+  const openResumePreview = () => {
+    setShowResumePreview(true);
+  };
+
+  const closeResumePreview = () => {
+    setShowResumePreview(false);
   };
 
   useEffect(() => {
@@ -49,7 +58,7 @@ const SectionAbout = (props) => {
         }`}
       >
         <h2 className={styles['sticky-name']}>Jaswanth Mada</h2>
-        <button className={styles['sticky-resume-btn']}>📄 Resume</button>
+        <button className={styles['sticky-resume-btn']} onClick={openResumePreview}>Resume </button>
       </header>
 
       <section className={styles['hero-section']}>
@@ -94,7 +103,7 @@ const SectionAbout = (props) => {
               </a>
               <button
                 className={styles['secondary-button']}
-                onClick={handleDownload}
+                onClick={openResumePreview}
               >
                 📄 Resume
               </button>
@@ -104,6 +113,82 @@ const SectionAbout = (props) => {
           </div>
         </div>
       </section>
+
+      {/* Resume Preview Modal */}
+      {showResumePreview && (
+        <div className={styles['resume-modal-overlay']} onClick={closeResumePreview}>
+          <div className={styles['resume-modal-content']} onClick={(e) => e.stopPropagation()}>
+            <div className={styles['resume-modal-header']}>
+              <h2 className={styles['resume-modal-title']}>Resume Preview</h2>
+              <button className={styles['resume-modal-close']} onClick={closeResumePreview}>
+                ×
+              </button>
+            </div>
+            
+            <div className={styles['resume-preview-container']}>
+              {isMobile ? (
+                <div className={styles['mobile-pdf-container']}>
+                  {/* Try PDF.js first */}
+                  <iframe
+                    src={`https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(window.location.origin + resumePDF)}`}
+                    title="Resume Preview"
+                    className={styles['mobile-pdf-iframe']}
+                    style={{ border: 'none' }}
+                    onError={() => {
+                      // Fallback to Google Docs viewer
+                      const iframe = document.querySelector(`.${styles['mobile-pdf-iframe']}`);
+                      if (iframe) {
+                        iframe.src = `https://docs.google.com/gview?url=${encodeURIComponent(window.location.origin + resumePDF)}&embedded=true`;
+                      }
+                    }}
+                  />
+                  <div className={styles['mobile-pdf-fallback']}>
+                    <p className={styles['mobile-pdf-info']}>
+                      Having trouble viewing the PDF?
+                    </p>
+                    <div className={styles['mobile-pdf-actions']}>
+                      <button
+                        className={styles['mobile-view-btn']}
+                        onClick={() => window.open(resumePDF, '_blank')}
+                      >
+                        📄 Open in New Tab
+                      </button>
+                      <button
+                        className={styles['mobile-download-btn']}
+                        onClick={handleDownload}
+                      >
+                        ⬇️ Download PDF
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <iframe
+                  src={resumePDF}
+                  title="Resume Preview"
+                  className={styles['resume-iframe']}
+                  style={{ border: 'none' }}
+                />
+              )}
+            </div>
+            
+            <div className={styles['resume-modal-actions']}>
+              <button
+                className={styles['download-btn']}
+                onClick={handleDownload}
+              >
+                📄 Download Resume
+              </button>
+              <button
+                className={styles['close-btn']}
+                onClick={closeResumePreview}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

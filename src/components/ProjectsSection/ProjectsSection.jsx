@@ -621,17 +621,17 @@ const ProjectsSection = function () {
                   <p className="duration-location">{experience.duration}</p>
                 </div>
 
-                <div className="problem-section">
+                {/* <div className="problem-section">
                   <h4 className="section-label">Problem</h4>
                   <p className="problem-text">{experience.problem.substring}</p>
-                </div>
+                </div> */}
 
-                <button
+                {/* <button
                   className="view-details-btn"
                   onClick={() => openModal(experience)}
                 >
                   View details
-                </button>
+                </button> */}
               </div>
             ))}
           </div>
@@ -933,8 +933,14 @@ const ProjectsSection = function () {
           issuer: 'CodePath.org',
           issuedDate: 'Spring 2025',
           certificateId: '96679',
-          description: 'Completed comprehensive technical interview preparation program focusing on data structures, algorithms, and coding interview techniques.',
-          skills: ['Data Structures', 'Algorithms', 'Technical Interviews', 'Problem Solving'],
+          description:
+            'Completed comprehensive technical interview preparation program focusing on data structures, algorithms, and coding interview techniques.',
+          skills: [
+            'Data Structures',
+            'Algorithms',
+            'Technical Interviews',
+            'Problem Solving',
+          ],
           category: 'Technical Interview Prep',
           verificationLink: '',
         },
@@ -943,8 +949,14 @@ const ProjectsSection = function () {
           issuer: 'AccioJob',
           rank: 'Ranked 1119 out of 11,000+ participants',
           issuedDate: 'July 10, 2022',
-          description: 'Certificate of appreciation for outstanding performance in the AccioWars Coding Contest, demonstrating strong competitive programming skills.',
-          skills: ['Competitive Programming', 'Problem Solving', 'Algorithms', 'Data Structures'],
+          description:
+            'Certificate of appreciation for outstanding performance in the AccioWars Coding Contest, demonstrating strong competitive programming skills.',
+          skills: [
+            'Competitive Programming',
+            'Problem Solving',
+            'Algorithms',
+            'Data Structures',
+          ],
           category: 'Competitive Programming',
           verificationLink: '',
         },
@@ -953,8 +965,16 @@ const ProjectsSection = function () {
           issuer: 'Google',
           issuedDate: 'July 2, 2025',
           verificationLink: 'https://www.credly.com/go/GYPESI1e',
-          description: 'Completed eight courses covering hands-on, practice-based assessments designed to prepare for introductory-level roles in Data Analytics. Competent in tools including spreadsheets, SQL, Tableau, and R.',
-          skills: ['Data Analysis', 'SQL', 'Tableau', 'R Programming', 'Data Visualization', 'Spreadsheets'],
+          description:
+            'Completed eight courses covering hands-on, practice-based assessments designed to prepare for introductory-level roles in Data Analytics. Competent in tools including spreadsheets, SQL, Tableau, and R.',
+          skills: [
+            'Data Analysis',
+            'SQL',
+            'Tableau',
+            'R Programming',
+            'Data Visualization',
+            'Spreadsheets',
+          ],
           category: 'Data Analytics',
         },
       ];
@@ -970,15 +990,23 @@ const ProjectsSection = function () {
                 <h3 className="project-title">{certification.title}</h3>
 
                 <div className="certification-meta">
-                  <p className="certification-issuer">Issued by: {certification.issuer}</p>
-                  <p className="certification-date">Issued: {certification.issuedDate}</p>
+                  <p className="certification-issuer">
+                    Issued by: {certification.issuer}
+                  </p>
+                  <p className="certification-date">
+                    Issued: {certification.issuedDate}
+                  </p>
                   {certification.rank && (
                     <p className="certification-rank">{certification.rank}</p>
                   )}
                   {certification.certificateId && (
-                    <p className="certification-id">Certificate ID: {certification.certificateId}</p>
+                    <p className="certification-id">
+                      Certificate ID: {certification.certificateId}
+                    </p>
                   )}
-                  <p className="certification-category">{certification.category}</p>
+                  <p className="certification-category">
+                    {certification.category}
+                  </p>
                 </div>
 
                 <div className="problem-section">
@@ -998,7 +1026,7 @@ const ProjectsSection = function () {
 
                 <div className="certification-actions">
                   <a
-                    href={certification.verificationLink || "#"}
+                    href={certification.verificationLink || '#'}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="verification-link-btn"
