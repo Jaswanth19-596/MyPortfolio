@@ -1,16 +1,22 @@
-/* 1100px */
+/* ==========================================================================
+   MEDIA QUERIES - Responsive Adjustments
+   ========================================================================== */
+
+/* Large Desktop - 1100px */
 @media (max-width: 68.75em) {
   html {
     font-size: 56.25%;
   }
 }
 
+/* Tablet - 752px */
 @media (max-width: 47em) {
   html {
     font-size: 50%;
   }
 }
 
+/* Mobile - 500px */
 @media (max-width: 31.25em) {
   html {
     font-size: 43.75%;

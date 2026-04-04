@@ -1,48 +1,27 @@
 .about-me-container {
-  margin-top: 5rem;
-  display: grid;
-  grid-template-columns: 50% 1fr;
-}
-
-.grid-container {
+  margin-top: var(--space-16);
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: start;
 }
 
 .grid-left-container {
-  padding: 2.4rem;
+  padding: var(--space-6);
+  background: var(--bg-elevated);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
 }
 
 .grid-right-container {
-  padding: 2.4rem;
-  overflow: hidden;
+  padding: var(--space-6);
+  background: var(--bg-elevated);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
   position: relative;
-  border-radius: 5rem;
-}
-
-.grid-right-container::before {
-  display: inline-block;
-  position: absolute;
-  content: '';
-  height: 100%;
-  left: 0;
-  top: 5rem;
-  width: 6rem;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-  opacity: 80%;
-  z-index: 2;
-}
-
-.grid-right-container::after {
-  position: absolute;
-  content: '';
-  height: 100%;
-  top: 5rem;
-  width: 10rem;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white);
-
-  width: 6rem;
-  right: 0;
+  overflow: hidden;
 }
 
 .heading {
@@ -50,26 +29,35 @@
 }
 
 .para {
-  font-size: 1.4rem;
-  color: var(--grey-color);
-  color: #495057;
-  line-height: 2;
-  margin-bottom: 2rem;
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.para:last-child {
+  margin-bottom: 0;
 }
 
 .skills-container {
   white-space: nowrap;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-3);
 }
 
 .education-heading {
-  font-size: 2rem;
+  font-size: var(--text-lg);
 }
 
-/*700px*/
-@media (max-width: 43.75em) {
+/* Responsive */
+@media (max-width: 56.25em) {
   .about-me-container {
     grid-template-columns: 1fr;
-    padding: 5rem;
+    gap: var(--space-8);
+    padding: 0 var(--space-4);
+  }
+
+  .grid-left-container,
+  .grid-right-container {
+    padding: var(--space-8);
   }
 }

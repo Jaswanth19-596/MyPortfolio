@@ -1,13 +1,19 @@
 import React from 'react';
 import styles from './Header.module.css';
 import { NavLink } from 'react-router-dom';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
+import { downloadResume } from '../../utils/downloadResume';
 
-const Header = (props) => {
+const Header = () => {
   const [showNav, setShowNav] = useState(false);
 
   const toggleNav = () => {
     setShowNav((prev) => !prev);
+  };
+
+  const handleResumeDownload = () => {
+    downloadResume();
+    if (showNav) toggleNav();
   };
 
   return (
@@ -44,7 +50,7 @@ const Header = (props) => {
         </ul>
       </nav>
 
-      <button 
+      <button
         className={styles.mobileMenuButton}
         onClick={toggleNav}
       >
@@ -56,7 +62,7 @@ const Header = (props) => {
       </button>
 
       <div className={`${styles.mobileOverlay} ${showNav ? styles.overlayOpen : ''}`} onClick={toggleNav}></div>
-      
+
       <nav className={`${styles.mobileNav} ${showNav ? styles.mobileNavOpen : ''}`}>
         <div className={styles.mobileNavContent}>
           <div className={styles.mobileNavHeader}>
@@ -124,18 +130,9 @@ const Header = (props) => {
 
           <div className={styles.mobileNavFooter}>
             <div className={styles.downloadSection}>
-              <button 
+              <button
                 className={styles.mobileDownloadBtn}
-                onClick={() => {
-                  const resumeUrl = '/resume.pdf';
-                  const link = document.createElement('a');
-                  link.href = resumeUrl;
-                  link.download = 'Jaswanth_Mada_Resume.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                  toggleNav();
-                }}
+                onClick={handleResumeDownload}
               >
                 <div className={styles.downloadIcon}>
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -149,16 +146,7 @@ const Header = (props) => {
         </div>
       </nav>
 
-      <button className={styles.resumeButton} onClick={() => {
-        // You can replace this with your actual resume file path
-        const resumeUrl = '/resume.pdf'; // Place your resume.pdf in the public folder
-        const link = document.createElement('a');
-        link.href = resumeUrl;
-        link.download = 'Jaswanth_Mada_Resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }}>
+      <button className={styles.resumeButton} onClick={handleResumeDownload}>
         Download Resume
       </button>
     </header>

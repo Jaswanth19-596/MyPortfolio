@@ -1,65 +1,59 @@
 import React from 'react';
-import styles from './../Education/Education.css';
-import './../Experience/Experience.css';
-import pnwlogo from './../../assests/images/pnwlogo.png';
-import teclogo from './../../assests/images/teclogo.png';
-import narayanalogo from './../../assests/images/narayanalogo.png';
-import sscrplogo from './../../assests/images/sscrplogo.png';
-import keerthibizpluslogo from './../../assests/images/keerthibizpluslogo.png';
-import accessifierslogo from './../../assests/images/accessifiers.png';
+import sharedStyles from '../../styles/education-shared.module.css';
+import styles from './Experience.module.css';
+import accessifierslogo from '../../assets/images/accessifiers.png';
+import keerthibizpluslogo from '../../assets/images/keerthibizpluslogo.png';
 import { MdWork } from 'react-icons/md';
 
-function Experience() {
-  const experience = [
-    {
-      logo: accessifierslogo,
-      name: 'Machine Learning Engineer',
-      company: 'Accessifiers',
-      duration: 'Aug 2025 - Now',
-      country: 'United States',
-    },
-    {
-      logo: keerthibizpluslogo,
-      name: 'Software Engineer Intern',
-      company: 'Keerthi Bizplus4U IT Services Private Limited',
-      duration: 'May 2023 - June 2023',
-      country: 'India',
-    },
-  ];
+const EXPERIENCE_DATA = [
+  {
+    logo: accessifierslogo,
+    name: 'AI/ML Engineer',
+    company: 'Techstack',
+    duration: 'Sept 2023 - Present',
+    country: 'United States',
+    logoSize: 'normal',
+  },
+  {
+    logo: keerthibizpluslogo,
+    name: 'ML Engineer Intern',
+    company: 'Keerthi Bizplus4U IT Services Private Limited',
+    duration: 'May 2023 - July 2023',
+    country: 'India',
+    logoSize: 'large',
+  },
+];
 
+const Experience = () => {
   return (
-    <div className="experience-container">
-      <div className="logo-container">
-        <MdWork className="work-icon" />
+    <div className={styles.experienceContainer}>
+      <div className={sharedStyles.logoContainer}>
+        <MdWork className={sharedStyles.workIcon} />
         <h4 className="heading-fourth">Career</h4>
       </div>
-      <div className="education-wrapper">
-        {experience.map((exp) => {
-          return (
-            <div className="experience">
-              <div className="school-logo-container">
-                <img
-                  className={`school-logo-long ${
-                    exp.name.startsWith('N') || exp.name.startsWith('S')
-                      ? 'large'
-                      : ''
-                  } `}
-                  src={exp.logo}
-                  alt="pnw_logo"
-                />
-              </div>
-              <div className="text-container">
-                <h3 className="educationHeading">{exp.name}</h3>
-                <p className="company">{exp.company}</p>
-                <p className="duration">{exp.duration}</p>
-                <p className="country">{exp.country}</p>
-              </div>
+      <div className={sharedStyles.educationWrapper}>
+        {EXPERIENCE_DATA.map((exp) => (
+          <div key={exp.name} className={styles.experience}>
+            <div className={sharedStyles.schoolLogoContainer}>
+              <img
+                className={`${sharedStyles.schoolLogoLong} ${
+                  exp.logoSize === 'large' ? sharedStyles.large : ''
+                }`}
+                src={exp.logo}
+                alt={`${exp.company} logo`}
+              />
             </div>
-          );
-        })}
+            <div className={styles.textContainer}>
+              <h3 className={sharedStyles.educationHeading}>{exp.name}</h3>
+              <p className={styles.company}>{exp.company}</p>
+              <p className={sharedStyles.duration}>{exp.duration}</p>
+              <p className={sharedStyles.country}>{exp.country}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
 
 export default Experience;

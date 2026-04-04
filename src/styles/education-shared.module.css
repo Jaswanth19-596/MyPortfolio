@@ -1,0 +1,68 @@
+.logoContainer {
+  display: flex;
+  gap: var(--space-3);
+  color: var(--text-primary);
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.workIcon {
+  font-size: var(--text-2xl);
+  color: var(--accent-primary);
+}
+
+.schoolLogoContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 12rem;
+  flex-shrink: 0;
+}
+
+.schoolLogoLong {
+  width: 10rem;
+  height: 5rem;
+  object-fit: contain;
+}
+
+.schoolLogoWide {
+  width: 8rem;
+  height: 5rem;
+  object-fit: contain;
+}
+
+.large {
+  width: 12rem;
+  height: 6rem;
+}
+
+.educationWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.educationHeading {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+  line-height: var(--leading-snug);
+}
+
+.duration {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-1);
+}
+
+.country {
+  color: var(--text-tertiary);
+  font-size: var(--text-xs);
+}
+
+@media (max-width: 43.75em) {
+  .educationWrapper {
+    grid-template-columns: 1fr;
+  }
+}

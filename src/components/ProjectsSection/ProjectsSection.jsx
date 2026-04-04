@@ -1,4 +1,4 @@
-import Projects from '../Projects/Projects';
+import ProjectsList from '../Projects/ProjectsList';
 import './ProjectsSection.css';
 import { useState } from 'react';
 
@@ -487,7 +487,7 @@ const ProjectsSection = function () {
             </li>
           </ul>
           <div className="projects-container">
-            <Projects
+            <ProjectsList
               key={animationKey}
               projects={projects}
               onProjectClick={openProjectModal}
@@ -579,33 +579,14 @@ const ProjectsSection = function () {
     if (activeMainTab === 'Professional Experience') {
       const experiences = [
         {
-          title: 'Machine Learning Engineer',
-          company: 'Accessifiers',
-          duration: 'Aug 2025 – Current • Chicago, United States • Remote',
-          problem:
-            'Supply chain teams were slowed by manual workflows and recurring IT issues that impacted throughput and user experience.',
-          approach:
-            'Automated supply chain workflows using scripts & workflow tools; delivered Tier 2 support (setup, troubleshooting, hardware configuration, staff training); collaborated across teams to design scalable IT solutions.',
-          outcomes: [
-            'Operational efficiency improved by ~30%',
-            'Reduced manual tasks and recurring tickets',
-            'Ensured smoother IT operations and user satisfaction',
-          ],
+          title: 'Applied AI Engineer',
+          company: 'Morgan Stanley',
+          duration: 'Jan 2025 – Current • Chicago, United States • Remote',
         },
         {
-          title: 'Software Engineer Intern',
-          company: 'Keerthi Bizplus4U IT Services Limited • Internship',
-          duration:
-            'May 2023 – July 2023 • 2 mos • Hyderabad, Telangana, India • Remote',
-          problem:
-            'Security posture needed improvement across threat detection, compliance visibility, and response readiness.',
-          approach:
-            'Developed security monitoring tools and dashboards; implemented threat detection algorithms; created compliance reporting systems; conducted security assessments and vulnerability testing.',
-          outcomes: [
-            'Enhanced threat detection capabilities by 45%',
-            'Improved compliance reporting accuracy',
-            'Reduced security incident response time by 60%',
-          ],
+          title: 'Machine Learning Engineer',
+          company: 'Sage Softech',
+          duration: 'Mar 2021 - Jul 2023',
         },
       ];
 
@@ -618,7 +599,7 @@ const ProjectsSection = function () {
 
                 <div className="experience-meta">
                   <p className="company-name">{experience.company}</p>
-                  <p className="duration-location">{experience.duration}</p>
+                  <p className="company-name">{experience.duration}</p>
                 </div>
 
                 {/* <div className="problem-section">
@@ -815,7 +796,7 @@ const ProjectsSection = function () {
                         <li key={index} className="modal-outcome-item">
                           {achievement}
                         </li>
-                      )
+                      ),
                     )}
                   </ul>
                 </div>
@@ -832,24 +813,59 @@ const ProjectsSection = function () {
 
     if (activeMainTab === 'Skills') {
       const skills = [
-        'HTML',
-        'Node Js',
-        'Data Structures',
-        'Bootstrap',
-        'Java',
-        'AWS Lambda',
-        'AWS DynamoDB',
-        'AWS Route 53',
-        'AWS Cloudfront',
-        'AWS CloudWatch',
-        'Amazon S3',
-        'Amazon EBS',
-        'Problem Solving',
-        'Mongo DB',
-        'SQL',
-        'REST APIs',
-        'Time Management',
-        'Creative',
+        'Python',
+        'NumPy',
+        'Pandas',
+        'scikit-learn',
+        'PyTorch',
+        'Supervised & Unsupervised Learning',
+        'Anomaly Detection',
+        'Fraud Classification',
+        'Feature Engineering',
+        'Model Evaluation',
+        'AI Agent Architectures',
+        'CrewAI',
+        'Multi-Agent Systems',
+        'ReAct Pattern',
+        'Planning Pattern',
+        'Tool Use',
+        'Custom Tool Development',
+        'Agent Memory Management',
+        'Guardrails & Output Validation',
+        'Human-In-The-Loop',
+        'Agent Callbacks',
+        'Hierarchical & Sequential Flows',
+        'Pydantic Structured Outputs',
+        'LLM Integration',
+        'Retrieval-Augmented Generation (RAG)',
+        'LangChain',
+        'FAISS',
+        'Pinecone',
+        'Prompt Engineering',
+        'Prompt Versioning',
+        'Retrieval Tuning',
+        'Citation Control',
+        'Embedding-Based Search',
+        'Data Preprocessing',
+        'Rolling-Window Aggregations',
+        'Class Imbalance Handling',
+        'Model Drift Analysis',
+        'Offline Validation',
+        'Python REST APIs',
+        'Inference Services',
+        'Application-Level Authorization',
+        'API Integration',
+        'AWS (S3, EC2, Lambda, IAM, CloudWatch)',
+        'Batch Inference Pipelines',
+        'Git',
+        'GitHub Actions',
+        'pytest',
+        'Automated Testing',
+        'Deployment Pipelines',
+        'Version Control for Models & Prompts',
+        'Model Performance Monitoring',
+        'Cost Monitoring',
+        'Production Debugging',
       ];
 
       return (

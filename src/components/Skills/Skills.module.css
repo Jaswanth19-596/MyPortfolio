@@ -1,0 +1,50 @@
+.skills {
+  display: inline-block;
+  animation: scroll 50s linear infinite;
+}
+
+.opposite {
+  animation: scrollright 50s linear infinite;
+}
+
+.skill {
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  font-size: var(--text-sm);
+  margin: var(--space-2);
+  border-radius: var(--radius-full);
+  text-transform: capitalize;
+  display: inline-block;
+  color: var(--text-secondary);
+  font-weight: var(--font-medium);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.skill:hover {
+  color: var(--text-primary);
+  background: var(--accent-subtle);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.15);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollright {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

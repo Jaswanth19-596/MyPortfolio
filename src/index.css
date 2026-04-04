@@ -1,5 +1,122 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+/* ==========================================================================
+   DESIGN SYSTEM - Modern Dark Portfolio
+   ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   1. TYPOGRAPHY SYSTEM
+   -------------------------------------------------------------------------- */
+/* Font Stack: Inter for UI (clean, modern, highly readable) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/*
+   TYPE SCALE (rem-based for accessibility)
+   --text-xs:   1.1rem  (17.6px) - Caption, labels
+   --text-sm:   1.3rem  (20.8px) - Small text, metadata
+   --text-base: 1.6rem  (25.6px) - Body text (improved from 1.4rem)
+   --text-lg:   1.8rem  (28.8px) - Large body, small headings
+   --text-xl:   2.0rem  (32px)   - Section labels
+   --text-2xl:  2.4rem  (38.4px) - Card titles, H4
+   --text-3xl:  3.0rem  (48px)   - Section headings, H3
+   --text-4xl:  3.6rem  (57.6px) - Hero subtitle, H2
+   --text-5xl:  4.8rem  (76.8px) - Hero name (large screens)
+*/
+
+:root {
+  /* Typography Scale */
+  --text-xs:   1.1rem;
+  --text-sm:   1.3rem;
+  --text-base: 1.6rem;
+  --text-lg:   1.8rem;
+  --text-xl:   2.0rem;
+  --text-2xl:  2.4rem;
+  --text-3xl:  3.0rem;
+  --text-4xl:  3.6rem;
+  --text-5xl:  4.8rem;
+
+  /* Line Heights */
+  --leading-tight:  1.2;
+  --leading-snug:  1.4;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* Letter Spacing */
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.05em;
+  --tracking-wider:  0.1em;
+
+  /* Font Weights */
+  --font-light:    300;
+  --font-normal:   400;
+  --font-medium:   500;
+  --font-semibold: 600;
+  --font-bold:     700;
+}
+
+/* --------------------------------------------------------------------------
+   2. COLOR SYSTEM (WCAG AA Compliant on Dark Background)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Background Layers */
+  --bg-base:       #0a0a0b;     /* Main background - softer than pure black */
+  --bg-elevated:   #111113;     /* Cards, elevated surfaces */
+  --bg-surface:    #18181b;     /* Inputs, secondary surfaces */
+  --bg-overlay:    #1f1f23;    /* Modals, dropdowns */
+
+  /* Border Colors */
+  --border-subtle:  rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.10);
+  --border-strong:  rgba(255, 255, 255, 0.15);
+
+  /* Text Colors - High Contrast */
+  --text-primary:   #f4f4f5;    /* Main text - warm white, not harsh pure white */
+  --text-secondary: #a1a1aa;    /* Secondary text - zinc-400 */
+  --text-tertiary: #71717a;     /* Tertiary text - zinc-500 */
+  --text-muted:    #52525b;     /* Disabled, hints */
+
+  /* Accent Colors */
+  --accent-primary:  #60a5fa;    /* Blue-400 - primary actions */
+  --accent-hover:    #93c5fd;    /* Blue-300 - hover state */
+  --accent-secondary: #818cf8;  /* Indigo-400 - secondary accent */
+  --accent-subtle:   rgba(96, 165, 250, 0.1); /* Accent background */
+
+  /* Semantic Colors */
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #f87171;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl:  0 16px 48px rgba(0, 0, 0, 0.6);
+
+  /* Spacing Scale */
+  --space-1:  0.25rem;  /* 4px */
+  --space-2:  0.5rem;   /* 8px */
+  --space-3:  0.75rem;  /* 12px */
+  --space-4:  1rem;     /* 16px */
+  --space-5:  1.25rem;  /* 20px */
+  --space-6:  1.5rem;   /* 24px */
+  --space-8:  2rem;     /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* Border Radius */
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   3. BASE STYLES
+   -------------------------------------------------------------------------- */
 *,
 *::after,
 *::before {
@@ -9,66 +126,92 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Improved base font sizes for better readability */
 @media (max-width: 768px) {
   html {
-    font-size: 82%;
+    font-size: 56.25%; /* Slightly smaller on tablets */
   }
 }
 
 @media (max-width: 480px) {
   html {
-    font-size: 92%;
+    font-size: 50%; /* Base size for mobile */
   }
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #000000;
-  background: radial-gradient(
-    circle at center,
-    rgba(20, 20, 20, 0.9) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+  background-image:
+    radial-gradient(ellipse at top, rgba(30, 30, 35, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(20, 20, 25, 0.3) 0%, transparent 50%);
+  min-height: 100vh;
 }
 
+/* --------------------------------------------------------------------------
+   4. UTILITY CLASSES
+   -------------------------------------------------------------------------- */
 .container {
   max-width: 120rem;
   margin: 0 auto;
-}
-:root {
-  --grey-color: #384143;
-  --grey-color-icon: #4a5759;
-  --skills-background: #e7e7e7;
-  --about-background: #fafafa;
+  padding: 0 var(--space-6);
 }
 
-/* Utilities*/
+.u-center-text { text-align: center; }
 
-.u-center-text {
-  text-align: center;
-}
+.u-margin-bottom-small { margin-bottom: var(--space-4); }
+.u-margin-bottom-medium { margin-bottom: var(--space-8); }
+.u-margin-bottom-large { margin-bottom: var(--space-12); }
 
-.u-margin-bottom-small {
-  margin-bottom: 1.2rem;
-}
-.u-margin-bottom-medium {
-  margin-bottom: 3.2rem;
-}
-.u-margin-bottom-large {
-  margin-bottom: 6.4rem;
-}
-
+/* --------------------------------------------------------------------------
+   5. TYPOGRAPHY UTILITIES
+   -------------------------------------------------------------------------- */
 .heading-tertiary {
-  font-weight: 700;
-  font-size: 3.6rem;
-  color: var(--grey-color);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
 }
 
 .heading-fourth {
-  color: var(--grey-color);
-  font-size: 2.1rem;
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  line-height: var(--leading-snug);
+}
+
+/* --------------------------------------------------------------------------
+   6. SELECTION & SCROLLBAR
+   -------------------------------------------------------------------------- */
+::selection {
+  background: var(--accent-primary);
+  color: var(--bg-base);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
 }

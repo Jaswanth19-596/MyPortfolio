@@ -1,0 +1,30 @@
+.educationContainer {
+  padding: var(--space-6);
+}
+
+.education {
+  display: flex;
+  gap: var(--space-5);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: all 0.3s ease;
+}
+
+.education:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.degree {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-2);
+  font-weight: var(--font-medium);
+}
+
+.textContainer {
+  flex: 1;
+}

@@ -1,532 +1,376 @@
+/* ==========================================================================
+   SECTION ABOUT - Hero & Profile Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   HERO SECTION
+   -------------------------------------------------------------------------- */
 .hero-section {
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px 40px 20px;
+  padding: var(--space-16) var(--space-6) var(--space-12);
   position: relative;
   z-index: 1;
+  min-height: 90vh;
 }
 
 .hero-container {
-  max-width: 800px;
+  max-width: 80rem;
   text-align: center;
   width: 100%;
 }
 
 .hero-name {
-  color: #ffffff;
-  font-size: 6.5rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  letter-spacing: -1px;
+  color: var(--text-primary);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
 }
 
 .hero-title {
-  color: #cccccc;
-  font-size: 1.8rem;
-  line-height: 1.6;
-  margin-bottom: 40px;
-  font-weight: 400;
-  max-width: 800px;
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-10);
+  font-weight: var(--font-normal);
+  max-width: 70rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .hero-description-box {
-  background: rgba(255, 255, 255, 0.015);
-  backdrop-filter: blur(30px);
-  border-radius: 16px;
-  padding: 32px;
-  padding-left: 60px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.2);
-}
-
-.hero-description {
-  color: #e0e0e0;
-  font-size: 1.5rem;
-  line-height: 1.7;
-  margin-bottom: 32px;
+  background: var(--bg-elevated);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-lg);
   text-align: left;
 }
 
+.hero-description {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-8);
+  list-style: none;
+  padding: 0;
+}
+
+.hero-description li {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+  position: relative;
+}
+
+.hero-description li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+}
+
+.hero-description li:last-child {
+  margin-bottom: 0;
+}
+
 .hero-buttons {
-  display: flex !important;
-  gap: 16px;
+  display: flex;
+  gap: var(--space-4);
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-6);
   flex-wrap: wrap;
-  width: 100%;
 }
 
 .primary-button {
-  background: #ffffff;
-  color: #000000;
-  border: 2px solid #ffffff;
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  font-weight: 600;
+  background: var(--text-primary);
+  color: var(--bg-base);
+  border: 2px solid var(--text-primary);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .primary-button:hover {
-  background: #f0f0f0;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(244, 244, 245, 0.2);
 }
 
 .secondary-button {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(25px);
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  font-weight: 500;
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-strong);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .secondary-button:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--text-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
 .location {
-  color: #888888;
-  font-size: 1.2rem;
+  color: var(--text-tertiary);
+  font-size: var(--text-sm);
   margin: 0;
 }
 
-/* Sticky Header */
-.sticky-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(35px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 16px 20px;
-  z-index: 50;
-  opacity: 0;
-  transform: translateY(-100%);
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
+/* --------------------------------------------------------------------------
+   STICKY HEADER - REMOVED
+   The sticky header functionality has been removed to prevent duplicate navbar
+   rendering. The main Header component handles navigation consistently.
+   -------------------------------------------------------------------------- */
 
-.sticky-header.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.sticky-name {
-  color: #ffffff;
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 0;
-  letter-spacing: -0.5px;
-}
-
-.sticky-resume-btn {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(25px);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.sticky-resume-btn:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-1px);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 40px 16px;
-  }
-
-  .sticky-header {
-    padding: 12px 16px;
-  }
-
-  .sticky-name {
-    font-size: 1.6rem;
-  }
-
-  .sticky-resume-btn {
-    padding: 10px 18px;
-    font-size: 1rem;
-  }
-
-  .hero-name {
-    font-size: 3.8rem;
-    margin-bottom: 16px;
-    line-height: 1.1;
-  }
-
-  .hero-title {
-    font-size: 1.4rem;
-    margin-bottom: 24px;
-    line-height: 1.4;
-    padding: 0 8px;
-  }
-
-  .hero-description-box {
-    padding: 20px 16px;
-    padding-left: 24px;
-  }
-
-  .hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    line-height: 1.6;
-  }
-
-  /* .hero-buttons {
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  } */
-
-  .primary-button {
-    padding: 14px 20px;
-    font-size: 1rem;
-    width: auto;
-    min-width: 160px;
-    max-width: 240px;
-  }
-
-  .secondary-button {
-    padding: 12px 18px;
-    font-size: 1rem;
-    width: auto;
-    min-width: 120px;
-    max-width: 160px;
-  }
-
-  .location {
-    font-size: 1.1rem;
-    margin-top: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    padding: 32px 12px;
-  }
-
-  .sticky-name {
-    font-size: 1.4rem;
-  }
-
-  .sticky-resume-btn {
-    padding: 8px 14px;
-    font-size: 0.95rem;
-  }
-
-  .hero-name {
-    font-size: 3.2rem;
-    margin-bottom: 12px;
-  }
-
-  .hero-title {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    padding: 0 4px;
-  }
-
-  .hero-description-box {
-    padding: 16px 12px;
-    padding-left: 20px;
-  }
-
-  /* .hero-buttons {
-    flex-direction: column;
-    gap: 8px;
-    align-items: stretch;
-  } */
-
-  .hero-description {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin-bottom: 16px;
-  }
-
-  .hero-description li {
-    margin-bottom: 8px;
-  }
-
-  .primary-button {
-    padding: 12px 16px;
-    font-size: 0.95rem;
-    width: auto;
-    min-width: 140px;
-    max-width: 200px;
-  }
-
-  .secondary-button {
-    padding: 10px 14px;
-    font-size: 0.95rem;
-    width: auto;
-    min-width: 100px;
-    max-width: 140px;
-  }
-
-  .location {
-    font-size: 1rem;
-  }
-}
-
-/* Resume Preview Modal */
+/* --------------------------------------------------------------------------
+   RESUME MODAL
+   -------------------------------------------------------------------------- */
 .resume-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: 20px;
+  padding: var(--space-6);
 }
 
 .resume-modal-content {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(40px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--bg-elevated);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-default);
   width: 90vw;
   height: 90vh;
-  max-width: 900px;
-  max-height: 800px;
+  max-width: 90rem;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
-  color: white;
-  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.5);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-xl);
 }
 
 .resume-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .resume-modal-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #ffffff;
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
   margin: 0;
 }
 
 .resume-modal-close {
   background: none;
   border: none;
-  color: #888888;
-  font-size: 2rem;
+  color: var(--text-tertiary);
+  font-size: var(--text-2xl);
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  width: 3.2rem;
+  height: 3.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   transition: all 0.2s ease;
 }
 
 .resume-modal-close:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  background: var(--bg-surface);
 }
 
 .resume-preview-container {
   flex: 1;
-  padding: 0 24px;
-  margin: 20px 0;
+  padding: var(--space-5);
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .resume-iframe {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
   background: white;
 }
 
 .resume-modal-actions {
   display: flex;
-  gap: 12px;
+  gap: var(--space-3);
   justify-content: center;
-  padding: 20px 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-5);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .download-btn {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  padding: 14px 24px;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 500;
+  background: var(--accent-primary);
+  border: none;
+  color: var(--bg-base);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
   cursor: pointer;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .download-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: var(--accent-hover);
   transform: translateY(-1px);
 }
 
 .close-btn {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #cccccc;
-  padding: 14px 24px;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 500;
+  background: transparent;
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .close-btn:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  border-color: var(--border-strong);
+  color: var(--text-primary);
 }
 
-/* Mobile PDF Viewing */
-.mobile-pdf-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.mobile-pdf-iframe {
-  width: 100%;
-  height: 70%;
-  border-radius: 8px;
-  background: white;
-  margin-bottom: 16px;
-}
-
-.mobile-pdf-fallback {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 16px;
-}
-
-.mobile-pdf-info {
-  color: #cccccc;
-  font-size: 1.1rem;
-  margin: 0 0 20px 0;
-  text-align: center;
-}
-
-.mobile-pdf-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.mobile-view-btn {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.mobile-view-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.mobile-download-btn {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.mobile-download-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
-
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  .hero-section {
+    padding: var(--space-12) var(--space-4) var(--space-8);
+    min-height: 85vh;
+  }
+
+  .hero-name {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-title {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-8);
+  }
+
+  .hero-description-box {
+    padding: var(--space-6);
+  }
+
+  .hero-description {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-description li {
+    margin-bottom: var(--space-3);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    max-width: 28rem;
+    justify-content: center;
+  }
+
+  .location {
+    font-size: var(--text-xs);
+  }
+
+  .sticky-header {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .sticky-name {
+    font-size: var(--text-lg);
+  }
+
+  .sticky-resume-btn {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+
   .resume-modal-content {
     width: 95vw;
     height: 95vh;
+    max-height: 90vh;
   }
 
   .resume-modal-header {
-    padding: 16px 20px;
+    padding: var(--space-4);
   }
 
   .resume-modal-title {
-    font-size: 1.5rem;
-  }
-
-  .resume-preview-container {
-    padding: 0 20px;
+    font-size: var(--text-lg);
   }
 
   .resume-modal-actions {
-    padding: 16px 20px;
     flex-direction: column;
+    padding: var(--space-4);
   }
 
   .download-btn,
   .close-btn {
     width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: var(--text-3xl);
+  }
+
+  .hero-title {
+    font-size: var(--text-sm);
+  }
+
+  .hero-description-box {
+    padding: var(--space-5);
   }
 }

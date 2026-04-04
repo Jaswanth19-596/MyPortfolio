@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Projects.module.css';
-import Project from '../Project/Project';
+import ProjectCard from '../Project/ProjectCard';
 
 const Projects = (props) => {
   const { projects, onProjectClick } = props;
@@ -13,7 +13,7 @@ const Projects = (props) => {
     <div className={`container`}>
       <div className={styles['projects-container']}>
         {projects.map((project, index) => (
-          <Project
+          <ProjectCard
             key={index}
             title={project.title}
             technologies={project.technologies}
