@@ -1,113 +1,140 @@
+/* ==========================================================================
+   HEADER - BAND BANNER STYLE NAVBAR
+   Like a protest strip slapped across the top
+   ========================================================================== */
+
 .header {
   display: flex;
   padding: var(--space-4) var(--space-8);
   align-items: center;
   justify-content: space-between;
-  background: rgba(10, 10, 11, 0.9);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-base);
+  border-bottom: 4px solid var(--punk-red);
   position: sticky;
   top: 0;
   z-index: 1000;
   min-height: 7rem;
+  box-shadow:
+    0 4px 0 rgba(220, 38, 38, 0.3),
+    0 8px 0 rgba(0, 0, 0, 0.5);
 }
 
+/* Brand section - Bold and aggressive */
 .brandContainer {
   display: flex;
-  gap: var(--space-6);
+  gap: var(--space-5);
   align-items: center;
 }
 
 .logoContainer {
-  font-size: var(--text-xl);
-  letter-spacing: 0;
-  font-weight: var(--font-bold);
-  border: 1px solid var(--border-default);
-  height: 4rem;
-  width: 4rem;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-2xl);
+  letter-spacing: var(--tracking-wide);
+  font-weight: var(--font-normal);
+  border: 3px solid var(--punk-red);
+  height: 4.8rem;
+  width: 4.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-lg);
-  color: var(--text-primary);
+  border-radius: 0;
+  color: var(--punk-red);
   background: var(--bg-surface);
-  transition: all 0.3s ease;
+  transform: rotate(-3deg);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
+  transition: all 0.15s ease;
 }
 
 .logoContainer:hover {
-  border-color: var(--border-strong);
-  background: var(--bg-overlay);
+  background: var(--punk-red);
+  color: white;
+  transform: rotate(0deg) translate(-2px, -2px);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.9);
 }
 
 .titleMain {
-  font-weight: var(--font-bold);
-  letter-spacing: var(--tracking-tight);
-  font-size: var(--text-xl);
+  font-family: 'Anton', Impact, sans-serif;
+  font-weight: var(--font-normal);
+  letter-spacing: var(--tracking-wider);
+  font-size: var(--text-2xl);
   color: var(--text-primary);
   margin: 0;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .titleSub {
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-weight: var(--font-normal);
-  letter-spacing: var(--tracking-wider);
+  letter-spacing: var(--tracking-punk);
   font-size: var(--text-xs);
-  color: var(--text-tertiary);
+  color: var(--punk-red);
   margin: 0;
   text-transform: uppercase;
 }
 
+/* Navigation - Punk style links */
 .navigationList {
   list-style-type: none;
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-1);
   margin: 0;
   padding: 0;
 }
 
 .navigationList li a:link,
 .navigationList li a:visited {
-  font-size: var(--text-sm);
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-base);
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   color: var(--text-secondary);
   display: inline-block;
-  transition: all 0.3s ease;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-md);
+  transition: all 0.15s ease;
+  padding: var(--space-2) var(--space-5);
+  border: 2px solid transparent;
   position: relative;
-  font-weight: var(--font-medium);
+  font-weight: var(--font-normal);
 }
 
 .navigationList li a:hover {
-  color: var(--text-primary);
-  background: var(--bg-surface);
+  color: var(--punk-red);
+  border-color: var(--punk-red);
+  background: transparent;
 }
 
+/* Active state - Bold underline with glow, NO layout shift */
 .navigationList li a.active {
-  color: var(--text-primary);
-  background: var(--bg-surface);
-  font-weight: var(--font-semibold);
+  color: var(--punk-red);
+  border: 2px solid var(--punk-red);
+  background: rgba(220, 38, 38, 0.1);
+  box-shadow:
+    inset 0 -4px 0 var(--punk-red),
+    0 0 15px rgba(220, 38, 38, 0.3);
+  font-weight: var(--font-normal);
 }
 
-.desktopNav {
-  display: block;
-}
-
+/* Mobile menu button - Rough sticker style */
 .mobileMenuButton {
   display: none;
   background: var(--bg-surface);
-  border: 1px solid var(--border-default);
+  border: 3px solid var(--punk-red);
   cursor: pointer;
   padding: var(--space-3);
-  border-radius: var(--radius-md);
-  transition: all 0.3s ease;
+  border-radius: 0;
+  transition: all 0.15s ease;
   position: relative;
   z-index: 1001;
+  transform: rotate(2deg);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
 }
 
 .mobileMenuButton:hover {
-  background: var(--bg-overlay);
-  border-color: var(--border-strong);
+  background: var(--punk-red);
+  transform: rotate(0deg) translate(-2px, -2px);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.9);
 }
 
 .hamburger {
@@ -121,15 +148,20 @@
 
 .hamburgerLine {
   width: 100%;
-  height: 2px;
-  background: var(--text-primary);
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  height: 3px;
+  background: var(--punk-red);
+  border-radius: 0;
+  transition: all 0.15s ease;
   transform-origin: center;
+}
+
+.mobileMenuButton:hover .hamburgerLine {
+  background: white;
 }
 
 .hamburgerOpen .hamburgerLine:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
+  background: white;
 }
 
 .hamburgerOpen .hamburgerLine:nth-child(2) {
@@ -139,20 +171,21 @@
 
 .hamburgerOpen .hamburgerLine:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
+  background: white;
 }
 
+/* Mobile overlay - Dark grunge */
 .mobileOverlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
+  background: rgba(10, 10, 12, 0.95);
   z-index: 998;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .overlayOpen {
@@ -160,6 +193,7 @@
   visibility: visible;
 }
 
+/* Mobile nav - Torn poster slide */
 .mobileNav {
   display: none;
   position: fixed;
@@ -168,11 +202,11 @@
   width: 32rem;
   height: 100vh;
   background: var(--bg-elevated);
-  backdrop-filter: blur(20px);
-  border-left: 1px solid var(--border-default);
+  border-left: 4px solid var(--punk-red);
   z-index: 1000;
   transform: translateX(100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
+  box-shadow: -8px 0 0 rgba(0, 0, 0, 0.5);
 }
 
 .mobileNavOpen {
@@ -189,7 +223,8 @@
 
 .mobileNavHeader {
   padding: var(--space-6);
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 3px solid var(--punk-red);
+  background: var(--bg-base);
 }
 
 .navBrand {
@@ -199,23 +234,28 @@
 }
 
 .navLogo {
-  width: 4rem;
-  height: 4rem;
+  width: 4.8rem;
+  height: 4.8rem;
   background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
+  border: 3px solid var(--punk-red);
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--text-lg);
-  font-weight: var(--font-bold);
-  color: var(--text-primary);
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-xl);
+  font-weight: var(--font-normal);
+  color: var(--punk-red);
+  transform: rotate(-2deg);
 }
 
 .navTitle {
-  font-size: var(--text-lg);
-  font-weight: var(--font-semibold);
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-xl);
+  font-weight: var(--font-normal);
   color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
 }
 
 .mobileNavBody {
@@ -234,7 +274,7 @@
   margin: 0;
   opacity: 0;
   transform: translateX(2rem);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .mobileNavOpen .mobileNavItem {
@@ -253,20 +293,25 @@
   padding: var(--space-4) var(--space-6);
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: var(--text-base);
-  font-weight: var(--font-medium);
-  border-bottom: 1px solid var(--border-subtle);
-  transition: all 0.3s ease;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-lg);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border-bottom: 1px solid var(--border-default);
+  transition: all 0.15s ease;
 }
 
 .mobileNavLink:hover {
-  color: var(--text-primary);
-  background: var(--bg-surface);
+  color: var(--punk-red);
+  background: rgba(220, 38, 38, 0.1);
+  padding-left: var(--space-8);
 }
 
 .mobileNavLink.active {
-  color: var(--text-primary);
-  background: var(--bg-surface);
+  color: var(--punk-red);
+  background: rgba(220, 38, 38, 0.15);
+  border-left: 4px solid var(--punk-red);
 }
 
 .linkWrapper {
@@ -278,23 +323,24 @@
 .linkIcon {
   width: 2rem;
   height: 2rem;
-  color: var(--text-tertiary);
+  color: var(--punk-red);
 }
 
 .linkArrow {
   width: 1.6rem;
   height: 1.6rem;
-  color: var(--text-muted);
+  color: var(--punk-red);
 }
 
 .linkText {
-  font-size: var(--text-base);
-  font-weight: var(--font-medium);
+  font-size: var(--text-lg);
+  font-weight: var(--font-normal);
 }
 
 .mobileNavFooter {
   padding: var(--space-5) var(--space-6);
-  border-top: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--punk-red);
+  background: var(--bg-base);
 }
 
 .downloadSection {
@@ -306,72 +352,88 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  color: var(--text-primary);
-  padding: var(--space-3) var(--space-5);
+  background: var(--punk-red);
+  border: 3px solid var(--punk-red);
+  color: white;
+  padding: var(--space-4) var(--space-6);
+  font-family: 'Anton', Impact, sans-serif;
   font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
-  border-radius: var(--radius-lg);
+  font-weight: var(--font-normal);
+  border-radius: 0;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
+  transform: rotate(-1deg);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+  width: 100%;
+  justify-content: center;
 }
 
 .mobileDownloadBtn:hover {
-  background: var(--bg-overlay);
-  border-color: var(--border-strong);
+  background: var(--punk-red-light);
+  transform: rotate(0deg) translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.9);
 }
 
 .downloadIcon {
   width: 1.8rem;
   height: 1.8rem;
-  color: var(--text-secondary);
+  color: white;
 }
 
+/* Resume button - Sticker style */
 .resumeButton {
   background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  color: var(--text-primary);
+  border: 3px solid var(--punk-red);
+  color: var(--punk-red);
   padding: var(--space-3) var(--space-5);
+  font-family: 'Anton', Impact, sans-serif;
   font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
-  border-radius: var(--radius-md);
+  font-weight: var(--font-normal);
+  border-radius: 0;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
   white-space: nowrap;
+  transform: rotate(1deg);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
 }
 
 .resumeButton:hover {
-  background: var(--bg-overlay);
-  border-color: var(--border-strong);
-  transform: translateY(-1px);
+  background: var(--punk-red);
+  color: white;
+  transform: rotate(0deg) translate(-2px, -2px);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.9);
 }
 
 .resumeButton:active {
-  transform: translateY(0);
-  background: var(--bg-surface);
+  transform: rotate(0deg) translate(0, 0);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
 }
 
-/* Active nav link - no transform to prevent layout shift */
-.navigationList li a.active {
-  color: var(--text-primary);
-  background: var(--bg-surface);
-  font-weight: var(--font-semibold);
-  box-shadow: inset 0 -2px 0 var(--accent-primary);
+/* Desktop nav */
+.desktopNav {
+  display: block;
 }
 
 @media (max-width: 768px) {
   .header {
     padding: var(--space-3) var(--space-4);
     min-height: 6rem;
+    border-bottom-width: 3px;
   }
 
   .brandContainer {
-    gap: var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .logoContainer {
+    height: 4rem;
+    width: 4rem;
+    font-size: var(--text-xl);
+    border-width: 2px;
   }
 
   .titleMain {
@@ -379,7 +441,7 @@
   }
 
   .titleSub {
-    font-size: var(--text-xs);
+    font-size: 1rem;
     letter-spacing: var(--tracking-wide);
   }
 
@@ -389,10 +451,12 @@
 
   .mobileMenuButton {
     display: block;
+    border-width: 2px;
   }
 
   .mobileNav {
     display: block;
+    border-left-width: 3px;
   }
 
   .mobileOverlay {
@@ -400,8 +464,7 @@
   }
 
   .resumeButton {
-    font-size: var(--text-xs);
-    padding: var(--space-2) var(--space-4);
+    display: none;
   }
 }
 
@@ -411,7 +474,13 @@
   }
 
   .brandContainer {
-    gap: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .logoContainer {
+    height: 3.6rem;
+    width: 3.6rem;
+    font-size: var(--text-lg);
   }
 
   .titleMain {
@@ -419,12 +488,11 @@
   }
 
   .titleSub {
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: var(--tracking-normal);
   }
 
-  .resumeButton {
-    font-size: 1rem;
-    padding: var(--space-2) var(--space-3);
+  .mobileNav {
+    width: 28rem;
   }
 }

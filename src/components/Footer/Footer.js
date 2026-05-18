@@ -38,7 +38,7 @@ const Footer = () => {
             © {currentYear} Jaswanth Mada. All rights reserved.
           </p>
           <p className={styles.madeWith}>
-            Made with ❤️ using React & Modern Web Technologies
+            BUILT WITH <span>RAGE</span> AND REACT // NO CORPORATE BS
           </p>
         </div>
       </div>

@@ -24,7 +24,7 @@ const Project = (props) => {
         className={styles['view-details-btn']}
         onClick={props.onProjectClick}
       >
-        View details
+        CHECK IT OUT
       </button>
     </div>
   );

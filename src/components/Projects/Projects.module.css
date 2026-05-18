@@ -1,53 +1,288 @@
+/* ==========================================================================
+   PROJECTS CONTAINER - WALL OF STICKERS
+   Like a bathroom wall covered in band stickers
+   ========================================================================== */
+
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
   width: 100%;
-  animation: fadeInUp 0.6s ease-out;
   max-width: 1400px;
   margin: 0 auto;
+  padding: var(--space-6);
+  position: relative;
+}
+
+/* Spray paint splatter background decoration */
+.projects-container::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.1) 0%, transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.projects-container::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(ellipse at center, rgba(101, 163, 13, 0.08) 0%, transparent 60%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Empty state styling */
 .projects-container h2 {
-  color: #888888;
+  color: var(--text-tertiary);
   text-align: center;
-  font-size: 1.5rem;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-2xl);
   grid-column: 1 / -1;
   padding: 60px 0;
-  background: #1a1a1a;
-  border-radius: 12px;
-  border: 1px solid #2a2a2a;
+  background: var(--bg-elevated);
+  border: 3px dashed var(--border-default);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* --------------------------------------------------------------------------
+   PROJECT CARD - Sticker style
+   -------------------------------------------------------------------------- */
+.project-card {
+  background: var(--bg-elevated);
+  border: 3px solid var(--border-default);
+  padding: var(--space-6);
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  position: relative;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Random sticker rotations */
+.project-card:nth-child(odd) {
+  transform: rotate(-0.3deg);
+}
+
+.project-card:nth-child(even) {
+  transform: rotate(0.3deg);
+}
+
+.project-card:nth-child(3n) {
+  transform: rotate(-0.5deg);
+}
+
+/* Peeling corner effect */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(225deg, rgba(220, 38, 38, 0.3) 50%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-card:hover {
+  border-color: var(--punk-red);
+  box-shadow:
+    8px 8px 0 rgba(220, 38, 38, 0.3),
+    12px 12px 0 rgba(0, 0, 0, 0.6);
+  transform: rotate(0deg) translate(-3px, -3px) !important;
+  z-index: 2;
+}
+
+/* Project title */
+.project-title {
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-xl);
+  font-weight: var(--font-normal);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: var(--leading-snug);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Tech tags - Little badges */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tech-tag {
+  background: var(--bg-surface);
+  border: 2px solid var(--border-default);
+  color: var(--text-tertiary);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 0;
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.15s ease;
+  transform: rotate(1deg);
+}
+
+.tech-tag:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.tech-tag:hover {
+  background: var(--punk-red);
+  border-color: var(--punk-red);
+  color: white;
+  transform: rotate(0deg);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Problem section */
+.problem-section {
+  flex: 1;
+}
+
+.section-label {
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-xs);
+  color: var(--punk-red);
+  margin-bottom: var(--space-3);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  position: relative;
+  display: inline-block;
+  padding-left: var(--space-3);
+}
+
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 12px;
+  background: var(--punk-red);
+}
+
+.problem-text {
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+/* View details button - Sticker style */
+.view-details-btn {
+  background: var(--bg-surface);
+  border: 3px solid var(--border-strong);
+  color: var(--text-primary);
+  padding: var(--space-3) var(--space-5);
+  border-radius: 0;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-sm);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  align-self: flex-start;
+  margin-top: auto;
+  transform: rotate(-1deg);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
+}
+
+.view-details-btn:hover {
+  background: var(--punk-red);
+  border-color: var(--punk-red);
+  color: white;
+  transform: rotate(0deg) translate(-2px, -2px);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.9);
+}
+
+.view-details-btn:active {
+  transform: rotate(0deg) translate(1px, 1px);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .projects-container {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
   }
 }
 
 @media (max-width: 768px) {
   .projects-container {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 24px;
     max-width: 100%;
+    padding: var(--space-4);
+  }
+
+  .projects-container::before,
+  .projects-container::after {
+    display: none;
+  }
+
+  .project-card {
+    padding: var(--space-5);
+    transform: rotate(0deg) !important;
+  }
+
+  .project-title {
+    font-size: var(--text-lg);
+  }
+
+  .tech-tag {
+    font-size: 1rem;
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .problem-text {
+    font-size: var(--text-xs);
+  }
+
+  .view-details-btn {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-xs);
+    transform: rotate(0deg);
   }
 }
 
 @media (max-width: 480px) {
   .projects-container {
-    gap: 16px;
-  }
-}
-
-/* Animation */
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0);
+    gap: 20px;
+    padding: var(--space-3);
   }
 }

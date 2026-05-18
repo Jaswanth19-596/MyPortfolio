@@ -1,30 +1,226 @@
+/* ==========================================================================
+   EXPERIENCE - GIG FLYERS & SHOW POSTERS
+   Like torn flyers from a punk show
+   ========================================================================== */
+
 .experienceContainer {
   padding: var(--space-6);
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
+/* Section heading - Show poster style */
+.sectionHeading {
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-3xl);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  margin-bottom: var(--space-10);
+  position: relative;
+  display: inline-block;
+  padding-left: var(--space-6);
+}
+
+.sectionHeading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 80%;
+  background: var(--punk-red);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Experience card - Gig flyer style */
 .experience {
   display: flex;
-  gap: var(--space-5);
+  gap: var(--space-6);
   background: var(--bg-elevated);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
-  transition: all 0.3s ease;
+  border: 3px solid var(--border-default);
+  padding: var(--space-8);
+  position: relative;
+  margin-bottom: var(--space-8);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.8);
+  transition: all 0.15s ease;
+}
+
+/* Random slight tilts for flyers */
+.experience:nth-child(odd) {
+  transform: rotate(-0.3deg);
+  border-left-color: var(--punk-red);
+}
+
+.experience:nth-child(even) {
+  transform: rotate(0.3deg);
+  border-right-color: var(--punk-green);
 }
 
 .experience:hover {
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  border-color: var(--punk-red);
+  box-shadow:
+    8px 8px 0 rgba(220, 38, 38, 0.3),
+    12px 12px 0 rgba(0, 0, 0, 0.6);
+  transform: rotate(0deg) translate(-2px, -2px);
+  z-index: 1;
 }
 
+/* Stacked paper effect on hover */
+.experience::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-surface);
+  border: 3px solid var(--border-subtle);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.15s ease;
+  transform: translate(8px, 8px);
+}
+
+.experience:hover::after {
+  opacity: 1;
+}
+
+/* Company badge */
 .company {
-  color: var(--text-secondary);
-  font-size: var(--text-sm);
-  margin-bottom: var(--space-2);
-  font-weight: var(--font-medium);
+  display: inline-block;
+  background: var(--punk-red);
+  color: white;
+  padding: var(--space-1) var(--space-4);
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-4);
+  transform: rotate(-1deg);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
 
+/* Text container */
 .textContainer {
   flex: 1;
+}
+
+/* Job title */
+.jobTitle {
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-snug);
+}
+
+/* Duration - Typewriter style */
+.duration {
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: var(--text-xs);
+  color: var(--punk-green);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-punk);
+  margin-bottom: var(--space-4);
+}
+
+/* Description list */
+.descriptionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.descriptionList li {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-6);
+  position: relative;
+}
+
+.descriptionList li::before {
+  content: '!';
+  position: absolute;
+  left: 0;
+  color: var(--punk-red);
+  font-family: 'Special Elite', monospace;
+  font-weight: bold;
+}
+
+/* Tech tags within experience */
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.techTag {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-tertiary);
+  padding: var(--space-1) var(--space-3);
+  font-family: 'Special Elite', monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.15s ease;
+}
+
+.techTag:hover {
+  background: var(--punk-red);
+  border-color: var(--punk-red);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experienceContainer {
+    padding: var(--space-4);
+  }
+
+  .sectionHeading {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-8);
+  }
+
+  .experience {
+    flex-direction: column;
+    padding: var(--space-6);
+    gap: var(--space-4);
+  }
+
+  .experience:hover {
+    transform: rotate(0deg);
+  }
+
+  .jobTitle {
+    font-size: var(--text-lg);
+  }
+
+  .descriptionList li {
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    padding: var(--space-5);
+    margin-bottom: var(--space-6);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+  }
+
+  .company {
+    font-size: 1rem;
+  }
+
+  .jobTitle {
+    font-size: var(--text-base);
+  }
 }

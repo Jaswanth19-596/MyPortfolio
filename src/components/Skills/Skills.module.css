@@ -1,34 +1,68 @@
+/* ==========================================================================
+   SKILLS - PUNK PINS & BADGES
+   Like a studded jacket with patches
+   ========================================================================== */
+
 .skills {
   display: inline-block;
-  animation: scroll 50s linear infinite;
+  animation: scroll 40s linear infinite;
 }
 
 .opposite {
-  animation: scrollright 50s linear infinite;
+  animation: scrollright 40s linear infinite;
 }
 
+/* Punk pin/badge style skill tags */
 .skill {
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-2) var(--space-5);
   background: var(--bg-surface);
-  border: 1px solid var(--border-default);
+  border: 2px solid var(--border-default);
+  font-family: 'Anton', Impact, sans-serif;
   font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   margin: var(--space-2);
-  border-radius: var(--radius-full);
-  text-transform: capitalize;
+  border-radius: 0;
   display: inline-block;
   color: var(--text-secondary);
-  font-weight: var(--font-medium);
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Random slight rotations for "sticker" feel */
+.skill:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.skill:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.skill:nth-child(3n) {
+  transform: rotate(-0.5deg);
 }
 
 .skill:hover {
-  color: var(--text-primary);
-  background: var(--accent-subtle);
-  border-color: var(--accent-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.15);
+  color: white;
+  background: var(--punk-red);
+  border-color: var(--punk-red);
+  transform: rotate(0deg) translate(-2px, -2px) !important;
+  box-shadow: 5px 5px 0 rgba(220, 38, 38, 0.5);
+}
+
+.skill:active {
+  transform: rotate(0deg) translate(1px, 1px) !important;
+  box-shadow: 2px 2px 0 rgba(220, 38, 38, 0.5);
+}
+
+/* Highlighted skills - special pins */
+.skill[data-highlight="true"],
+.skill:nth-child(5n):hover {
+  background: var(--punk-red);
+  border-color: var(--punk-red);
 }
 
 @keyframes scroll {
@@ -36,15 +70,38 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 @keyframes scrollright {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
   to {
     transform: translateX(0);
+  }
+}
+
+/* Pause animation on hover */
+.skills:hover {
+  animation-play-state: paused;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .skill {
+    padding: var(--space-1) var(--space-4);
+    font-size: var(--text-xs);
+    margin: var(--space-1);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+  }
+
+  .skills {
+    animation-duration: 30s;
+  }
+
+  .opposite {
+    animation-duration: 30s;
   }
 }

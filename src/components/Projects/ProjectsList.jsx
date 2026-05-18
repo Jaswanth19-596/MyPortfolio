@@ -6,7 +6,7 @@ const Projects = (props) => {
   const { projects, onProjectClick } = props;
 
   if (projects.length === 0) {
-    return <h2>On the way !!</h2>;
+    return <h2>COMING SOON !!</h2>;
   }
 
   return (

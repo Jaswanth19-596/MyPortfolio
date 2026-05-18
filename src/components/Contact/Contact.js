@@ -60,9 +60,9 @@ const Contact = () => {
   return (
     <div className="container">
       <div className={styles.contactMeTextContainer}>
-        <h3 className={styles.contactMeHeading}>Let's Talk</h3>
+        <h3 className={styles.contactMeHeading}>GET IN TOUCH</h3>
         <p className={styles.contactMeDescription}>
-          It's crazy how we stopped using Pigeons to communicate. We can also do that, but I would prefer one of the following:
+          DROP ME A LINE // HIT ME UP // LET'S RAGE
         </p>
 
         <div className={styles.socialMediaContainer}>

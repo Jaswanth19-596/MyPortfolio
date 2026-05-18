@@ -1,9 +1,10 @@
 /* ==========================================================================
-   SECTION ABOUT - Hero & Profile Styles
+   SECTION ABOUT / HERO - PUNK ROCK POSTER STYLE
+   Like a gig poster slapped on an alley wall
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   HERO SECTION
+   HERO SECTION - Raw energy
    -------------------------------------------------------------------------- */
 .hero-section {
   background: transparent;
@@ -14,42 +15,113 @@
   position: relative;
   z-index: 1;
   min-height: 90vh;
+  overflow: hidden;
+}
+
+/* Splatter decorations */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: -5%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(ellipse at center, rgba(101, 163, 13, 0.1) 0%, transparent 60%);
+  filter: blur(50px);
+  pointer-events: none;
 }
 
 .hero-container {
-  max-width: 80rem;
+  max-width: 90rem;
   text-align: center;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
+/* Hero name - PUNK POSTER STYLE */
 .hero-name {
+  font-family: 'Anton', Impact, sans-serif;
   color: var(--text-primary);
-  font-size: var(--text-5xl);
-  font-weight: var(--font-bold);
-  margin-bottom: var(--space-6);
-  letter-spacing: var(--tracking-tight);
+  font-size: clamp(4rem, 12vw, var(--text-5xl));
+  font-weight: var(--font-normal);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--tracking-wider);
   line-height: var(--leading-tight);
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  animation: punkFadeIn 0.6s ease-out;
+}
+
+/* Name outline effect */
+.hero-name::before {
+  content: 'JASWANTH';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--punk-red);
+  z-index: -1;
+  opacity: 0.5;
 }
 
 .hero-title {
-  color: var(--text-secondary);
+  font-family: 'Special Elite', 'Courier New', monospace;
+  color: var(--punk-red);
   font-size: var(--text-lg);
-  line-height: var(--leading-relaxed);
+  line-height: var(--leading-normal);
   margin-bottom: var(--space-10);
   font-weight: var(--font-normal);
   max-width: 70rem;
   margin-left: auto;
   margin-right: auto;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-punk);
+  animation: punkFadeIn 0.6s ease-out 0.1s both;
 }
 
+/* Hero description box - Torn poster style */
 .hero-description-box {
   background: var(--bg-elevated);
-  backdrop-filter: blur(20px);
-  border-radius: var(--radius-xl);
+  border: 3px solid var(--border-default);
   padding: var(--space-10);
-  border: 1px solid var(--border-default);
-  box-shadow: var(--shadow-lg);
   text-align: left;
+  position: relative;
+  transform: rotate(-0.5deg);
+  box-shadow:
+    6px 6px 0 rgba(220, 38, 38, 0.3),
+    12px 12px 0 rgba(0, 0, 0, 0.4);
+  animation: stamp 0.5s ease-out 0.2s both;
+}
+
+/* Rough torn edge effect */
+.hero-description-box::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: var(--bg-elevated);
+  clip-path: polygon(
+    0% 60%, 3% 40%, 6% 55%, 9% 35%, 12% 50%, 15% 45%, 18% 60%, 21% 30%,
+    24% 55%, 27% 40%, 30% 50%, 33% 35%, 36% 55%, 39% 45%, 42% 60%, 45% 40%,
+    48% 55%, 51% 35%, 54% 50%, 57% 45%, 60% 55%, 63% 30%, 66% 50%, 69% 40%,
+    72% 55%, 75% 35%, 78% 50%, 81% 45%, 84% 60%, 87% 40%, 90% 55%, 93% 45%, 96% 50%, 100% 60%
+  );
 }
 
 .hero-description {
@@ -63,90 +135,129 @@
 
 .hero-description li {
   margin-bottom: var(--space-4);
-  padding-left: var(--space-6);
+  padding-left: var(--space-8);
   position: relative;
 }
 
+/* Bullet points - Punk style exclamation marks */
 .hero-description li::before {
-  content: '';
+  content: '!>';
   position: absolute;
   left: 0;
-  top: 1rem;
-  width: 6px;
-  height: 6px;
-  background: var(--accent-primary);
-  border-radius: 50%;
+  top: 0;
+  color: var(--punk-red);
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-weight: bold;
+  font-size: var(--text-sm);
 }
 
 .hero-description li:last-child {
   margin-bottom: 0;
 }
 
+/* Hero buttons - Sticker style */
 .hero-buttons {
   display: flex;
-  gap: var(--space-4);
+  gap: var(--space-5);
   justify-content: center;
   margin-bottom: var(--space-6);
   flex-wrap: wrap;
 }
 
 .primary-button {
-  background: var(--text-primary);
-  color: var(--bg-base);
-  border: 2px solid var(--text-primary);
+  background: var(--punk-red);
+  color: white;
+  border: 3px solid var(--punk-red);
   padding: var(--space-4) var(--space-8);
-  border-radius: var(--radius-md);
+  border-radius: 0;
+  font-family: 'Anton', Impact, sans-serif;
   font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
+  transform: rotate(-1deg);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
 }
 
 .primary-button:hover {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(244, 244, 245, 0.2);
+  background: var(--punk-red-light);
+  transform: rotate(0deg) translate(-3px, -3px);
+  box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.9);
+}
+
+.primary-button:active {
+  transform: rotate(0deg) translate(2px, 2px);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* Highlight streak effect on hover */
+.primary-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.3s ease;
+}
+
+.primary-button:hover::after {
+  left: 100%;
 }
 
 .secondary-button {
-  background: transparent;
+  background: var(--bg-surface);
   color: var(--text-primary);
-  border: 2px solid var(--border-strong);
+  border: 3px solid var(--text-primary);
   padding: var(--space-4) var(--space-8);
-  border-radius: var(--radius-md);
+  border-radius: 0;
+  font-family: 'Anton', Impact, sans-serif;
   font-size: var(--text-sm);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
+  transform: rotate(1deg);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
 }
 
 .secondary-button:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--text-primary);
-  transform: translateY(-2px);
+  background: var(--bg-overlay);
+  border-color: var(--punk-red);
+  color: var(--punk-red);
+  transform: rotate(0deg) translate(-3px, -3px);
+  box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.9);
 }
 
+.secondary-button:active {
+  transform: rotate(0deg) translate(2px, 2px);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* Location - Stencil text */
 .location {
   color: var(--text-tertiary);
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: var(--text-sm);
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-punk);
 }
 
 /* --------------------------------------------------------------------------
-   STICKY HEADER - REMOVED
-   The sticky header functionality has been removed to prevent duplicate navbar
-   rendering. The main Header component handles navigation consistently.
-   -------------------------------------------------------------------------- */
-
-/* --------------------------------------------------------------------------
-   RESUME MODAL
+   RESUME MODAL - Punk poster style
    -------------------------------------------------------------------------- */
 .resume-modal-overlay {
   position: fixed;
@@ -154,7 +265,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(10, 10, 12, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,8 +275,8 @@
 
 .resume-modal-content {
   background: var(--bg-elevated);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-default);
+  border: 4px solid var(--punk-red);
+  border-radius: 0;
   width: 90vw;
   height: 90vh;
   max-width: 90rem;
@@ -173,7 +284,10 @@
   display: flex;
   flex-direction: column;
   color: var(--text-primary);
-  box-shadow: var(--shadow-xl);
+  box-shadow:
+    10px 10px 0 rgba(220, 38, 38, 0.3),
+    20px 20px 0 rgba(0, 0, 0, 0.5);
+  transform: rotate(-0.3deg);
 }
 
 .resume-modal-header {
@@ -181,34 +295,41 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--space-5) var(--space-6);
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 3px solid var(--punk-red);
+  background: var(--bg-base);
 }
 
 .resume-modal-title {
-  font-size: var(--text-xl);
-  font-weight: var(--font-semibold);
-  color: var(--text-primary);
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-2xl);
+  font-weight: var(--font-normal);
+  color: var(--punk-red);
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
 }
 
 .resume-modal-close {
   background: none;
-  border: none;
-  color: var(--text-tertiary);
-  font-size: var(--text-2xl);
+  border: 2px solid var(--punk-red);
+  color: var(--punk-red);
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-xl);
   cursor: pointer;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-md);
-  transition: all 0.2s ease;
+  border-radius: 0;
+  transition: all 0.15s ease;
+  transform: rotate(2deg);
 }
 
 .resume-modal-close:hover {
-  color: var(--text-primary);
-  background: var(--bg-surface);
+  background: var(--punk-red);
+  color: white;
+  transform: rotate(0deg);
 }
 
 .resume-preview-container {
@@ -223,54 +344,68 @@
 .resume-iframe {
   width: 100%;
   height: 100%;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
+  border: none;
   background: white;
 }
 
 .resume-modal-actions {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-4);
   justify-content: center;
   padding: var(--space-5);
-  border-top: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--punk-red);
+  background: var(--bg-base);
 }
 
 .download-btn {
-  background: var(--accent-primary);
-  border: none;
-  color: var(--bg-base);
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-md);
+  background: var(--punk-red);
+  border: 3px solid var(--punk-red);
+  color: white;
+  padding: var(--space-4) var(--space-8);
+  border-radius: 0;
+  font-family: 'Anton', Impact, sans-serif;
   font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
+  transform: rotate(-1deg);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
 }
 
 .download-btn:hover {
-  background: var(--accent-hover);
-  transform: translateY(-1px);
+  background: var(--punk-red-light);
+  transform: rotate(0deg) translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.9);
 }
 
 .close-btn {
-  background: transparent;
-  border: 1px solid var(--border-default);
-  color: var(--text-secondary);
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 3px solid var(--text-primary);
+  color: var(--text-primary);
+  padding: var(--space-4) var(--space-8);
+  border-radius: 0;
+  font-family: 'Anton', Impact, sans-serif;
   font-size: var(--text-sm);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
+  transform: rotate(1deg);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
 }
 
 .close-btn:hover {
-  border-color: var(--border-strong);
-  color: var(--text-primary);
+  background: var(--bg-overlay);
+  border-color: var(--punk-red);
+  color: var(--punk-red);
+  transform: rotate(0deg) translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.9);
 }
 
 /* --------------------------------------------------------------------------
@@ -287,13 +422,22 @@
     margin-bottom: var(--space-4);
   }
 
+  .hero-name::before {
+    top: 2px;
+    left: 2px;
+  }
+
   .hero-title {
     font-size: var(--text-base);
     margin-bottom: var(--space-8);
+    letter-spacing: var(--tracking-wider);
   }
 
   .hero-description-box {
     padding: var(--space-6);
+    box-shadow:
+      4px 4px 0 rgba(220, 38, 38, 0.3),
+      8px 8px 0 rgba(0, 0, 0, 0.4);
   }
 
   .hero-description {
@@ -303,12 +447,13 @@
 
   .hero-description li {
     margin-bottom: var(--space-3);
+    padding-left: var(--space-6);
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-4);
   }
 
   .primary-button,
@@ -322,23 +467,13 @@
     font-size: var(--text-xs);
   }
 
-  .sticky-header {
-    padding: var(--space-3) var(--space-4);
-  }
-
-  .sticky-name {
-    font-size: var(--text-lg);
-  }
-
-  .sticky-resume-btn {
-    padding: var(--space-2) var(--space-4);
-    font-size: var(--text-xs);
-  }
-
   .resume-modal-content {
     width: 95vw;
     height: 95vh;
     max-height: 90vh;
+    box-shadow:
+      6px 6px 0 rgba(220, 38, 38, 0.3),
+      12px 12px 0 rgba(0, 0, 0, 0.5);
   }
 
   .resume-modal-header {
@@ -346,7 +481,7 @@
   }
 
   .resume-modal-title {
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
   }
 
   .resume-modal-actions {
@@ -368,9 +503,17 @@
 
   .hero-title {
     font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
   }
 
   .hero-description-box {
     padding: var(--space-5);
+    transform: rotate(0deg);
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-xs);
   }
 }

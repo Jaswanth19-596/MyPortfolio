@@ -579,14 +579,14 @@ const ProjectsSection = function () {
     if (activeMainTab === 'Professional Experience') {
       const experiences = [
         {
-          title: 'Applied AI Engineer',
-          company: 'Morgan Stanley',
-          duration: 'Jan 2025 – Current • Chicago, United States • Remote',
+          title: 'Machine Learning Engineer',
+          company: 'Accessifiers',
+          duration: 'Aug 2025 – Present • Remote',
         },
         {
           title: 'Machine Learning Engineer',
           company: 'Sage Softech',
-          duration: 'Mar 2021 - Jul 2023',
+          duration: 'Mar 2022 - Jul 2023',
         },
       ];
 

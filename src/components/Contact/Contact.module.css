@@ -1,82 +1,250 @@
+/* ==========================================================================
+   CONTACT - GIG FLYER / VENUE POSTER STYLE
+   Like contact info on a show poster
+   ========================================================================== */
+
 .contactMeTextContainer {
-  padding: var(--space-8) var(--space-6);
-  max-width: 60rem;
+  padding: var(--space-12) var(--space-6);
+  max-width: 70rem;
   margin: 0 auto;
+  position: relative;
 }
 
+/* Spray paint splatter decoration */
+.contactMeTextContainer::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.12) 0%, transparent 60%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Contact heading - Gig poster style */
 .contactMeHeading {
+  font-family: 'Anton', Impact, sans-serif;
   font-size: var(--text-4xl);
   color: var(--text-primary);
   margin-bottom: var(--space-4);
   text-align: center;
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
+/* X marks on sides of heading */
+.contactMeHeading::before,
+.contactMeHeading::after {
+  content: 'X';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--punk-red);
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-xl);
+  opacity: 0.5;
+}
+
+.contactMeHeading::before {
+  left: 10%;
+}
+
+.contactMeHeading::after {
+  right: 10%;
+}
+
+/* Subtitle - Typewriter style */
 .contactMeDescription {
-  font-size: var(--text-lg);
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: var(--text-base);
   color: var(--text-secondary);
   text-align: center;
-  margin: 0 auto var(--space-10);
+  margin: 0 auto var(--space-12);
   line-height: var(--leading-relaxed);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-punk);
 }
 
+/* Social media links - Gig venue style */
 .socialMediaContainer {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .socialMedia {
   display: flex;
   align-items: center;
   gap: var(--space-5);
-  padding: var(--space-5) var(--space-6);
+  padding: var(--space-6);
   background: var(--bg-elevated);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
+  border: 3px solid var(--border-default);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
+  position: relative;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Alternate rotation for sticker effect */
+.socialMedia:nth-child(odd) {
+  transform: rotate(-0.5deg);
+}
+
+.socialMedia:nth-child(even) {
+  transform: rotate(0.5deg);
 }
 
 .socialMedia:hover {
-  border-color: var(--accent-primary);
-  background: var(--accent-subtle);
-  transform: translateX(4px);
+  border-color: var(--punk-red);
+  box-shadow: 8px 8px 0 rgba(220, 38, 38, 0.3), 12px 12px 0 rgba(0, 0, 0, 0.6);
+  transform: rotate(0deg) translate(-3px, -3px);
+}
+
+/* Perforated ticket stub effect on left */
+.socialMedia::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 0;
+  bottom: 0;
+  width: 16px;
+  background: var(--bg-base);
+  clip-path: polygon(
+    0% 10%, 50% 0%, 100% 10%, 100% 20%, 50% 10%, 0% 20%,
+    0% 30%, 50% 20%, 100% 30%, 100% 40%, 50% 30%, 0% 40%,
+    0% 50%, 50% 40%, 100% 50%, 100% 60%, 50% 50%, 0% 60%,
+    0% 70%, 50% 60%, 100% 70%, 100% 80%, 50% 70%, 0% 80%,
+    0% 90%, 50% 80%, 100% 90%, 100% 100%, 50% 90%, 0% 100%
+  );
+  opacity: 0.7;
 }
 
 .socialMediaIconContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4.8rem;
-  height: 4.8rem;
+  width: 5.6rem;
+  height: 5.6rem;
   background: var(--bg-surface);
-  border-radius: var(--radius-md);
+  border: 3px solid var(--punk-red);
+  border-radius: 0;
   flex-shrink: 0;
+  transform: rotate(-3deg);
+  transition: all 0.15s ease;
+}
+
+.socialMedia:hover .socialMediaIconContainer {
+  background: var(--punk-red);
+  transform: rotate(0deg);
 }
 
 .icon {
-  font-size: 2.4rem;
-  color: var(--accent-primary);
+  font-size: 2.8rem;
+  color: var(--punk-red);
+  transition: all 0.15s ease;
+}
+
+.socialMedia:hover .icon {
+  color: white;
 }
 
 .socialMediaText {
-  font-size: var(--text-base);
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-lg);
   color: var(--text-secondary);
   flex: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  transition: all 0.15s ease;
+}
+
+.socialMedia:hover .socialMediaText {
+  color: var(--text-primary);
+}
+
+/* Arrow indicator */
+.socialMedia::after {
+  content: '→';
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-xl);
+  color: var(--text-tertiary);
+  transition: all 0.15s ease;
+}
+
+.socialMedia:hover::after {
+  color: var(--punk-red);
+  transform: translateX(5px);
 }
 
 @media (max-width: 48em) {
   .contactMeTextContainer {
-    padding: var(--space-6) var(--space-4);
+    padding: var(--space-8) var(--space-4);
   }
 
   .contactMeHeading {
     font-size: var(--text-3xl);
   }
 
+  .contactMeHeading::before,
+  .contactMeHeading::after {
+    display: none;
+  }
+
+  .contactMeDescription {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-8);
+    letter-spacing: var(--tracking-wider);
+  }
+
   .socialMedia {
     padding: var(--space-4) var(--space-5);
+    transform: rotate(0deg) !important;
+  }
+
+  .socialMedia::before {
+    display: none;
+  }
+
+  .socialMediaIconContainer {
+    width: 4.8rem;
+    height: 4.8rem;
+    transform: rotate(-2deg);
+  }
+
+  .icon {
+    font-size: 2.4rem;
+  }
+
+  .socialMediaText {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .contactMeHeading {
+    font-size: var(--text-2xl);
+  }
+
+  .socialMedia {
+    padding: var(--space-4);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
+  }
+
+  .socialMediaIconContainer {
+    width: 4rem;
+    height: 4rem;
+    border-width: 2px;
+  }
+
+  .icon {
+    font-size: 2rem;
   }
 
   .socialMediaText {

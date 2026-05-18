@@ -1,31 +1,79 @@
+/* ==========================================================================
+   ABOUT SECTION - Punk rock zine style
+   Like pages from a DIY zine
+   ========================================================================== */
+
 .about-me-container {
   margin-top: var(--space-16);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
   align-items: start;
+  position: relative;
+}
+
+/* Zine-style grid containers */
+.grid-left-container,
+.grid-right-container {
+  padding: var(--space-8);
+  background: var(--bg-elevated);
+  border: 3px solid var(--border-default);
+  position: relative;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.8);
 }
 
 .grid-left-container {
-  padding: var(--space-6);
-  background: var(--bg-elevated);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-md);
+  transform: rotate(-0.5deg);
+  border-color: var(--punk-red);
 }
 
 .grid-right-container {
-  padding: var(--space-6);
-  background: var(--bg-elevated);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-md);
-  position: relative;
+  transform: rotate(0.8deg);
+  border-left: 4px solid var(--punk-green);
   overflow: hidden;
+}
+
+/* Torn edge top */
+.grid-left-container::before,
+.grid-right-container::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: var(--bg-elevated);
+  clip-path: polygon(
+    0% 50%, 2% 30%, 4% 60%, 6% 40%, 8% 55%, 10% 35%, 12% 50%, 14% 45%,
+    16% 60%, 18% 40%, 20% 55%, 22% 30%, 24% 50%, 26% 45%, 28% 60%, 30% 35%,
+    32% 55%, 34% 40%, 36% 50%, 38% 45%, 40% 60%, 42% 30%, 44% 55%, 46% 40%,
+    48% 50%, 50% 35%, 52% 60%, 54% 45%, 56% 55%, 58% 30%, 60% 50%, 62% 40%,
+    64% 55%, 66% 45%, 68% 60%, 70% 35%, 72% 50%, 74% 40%, 76% 55%, 78% 30%,
+    80% 50%, 82% 45%, 84% 60%, 86% 40%, 88% 55%, 90% 35%, 92% 50%, 94% 45%, 96% 55%, 98% 40%, 100% 50%
+  );
 }
 
 .heading {
   grid-column: 1/-1;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-4xl);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  margin-bottom: var(--space-8);
+  position: relative;
+  display: inline-block;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: var(--punk-red);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
 }
 
 .para {
@@ -33,19 +81,66 @@
   color: var(--text-secondary);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-6);
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.para::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--punk-red);
+  font-family: 'Special Elite', monospace;
+  font-weight: bold;
 }
 
 .para:last-child {
   margin-bottom: 0;
 }
 
+/* Skills container - flowing badges */
 .skills-container {
   white-space: nowrap;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px dashed var(--border-subtle);
 }
 
 .education-heading {
-  font-size: var(--text-lg);
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-xl);
+  color: var(--punk-green);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-4);
+  position: relative;
+  display: inline-block;
+}
+
+.education-heading::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid var(--punk-green);
+}
+
+/* Spray paint accent on right container */
+.grid-right-container::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(ellipse at center, rgba(101, 163, 13, 0.2) 0%, transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
 }
 
 /* Responsive */
@@ -58,6 +153,38 @@
 
   .grid-left-container,
   .grid-right-container {
-    padding: var(--space-8);
+    padding: var(--space-6);
+    transform: rotate(0deg);
+  }
+
+  .heading {
+    font-size: var(--text-3xl);
+  }
+
+  .heading::after {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me-container {
+    margin-top: var(--space-12);
+  }
+
+  .grid-left-container,
+  .grid-right-container {
+    padding: var(--space-5);
+  }
+
+  .para {
+    font-size: var(--text-sm);
+  }
+
+  .heading {
+    font-size: var(--text-2xl);
+  }
+
+  .education-heading {
+    font-size: var(--text-lg);
   }
 }

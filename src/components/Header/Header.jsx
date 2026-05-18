@@ -26,7 +26,7 @@ const Header = () => {
         </div>
         <div>
           <div className={styles.titleMain}>Jaswanth</div>
-          <div className={styles.titleSub}>PORTFOLIO</div>
+          <div className={styles.titleSub}>REBEL / DEV / PUNK</div>
         </div>
       </div>
 

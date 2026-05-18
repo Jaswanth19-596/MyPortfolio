@@ -64,10 +64,10 @@ const SectionAbout = (props) => {
               </li>
             </ul>
 
-            <div>
+            <div className={styles['hero-buttons']}>
               <a href="mailto:madhajaswanth@gmail.com">
                 <button className={styles['primary-button']}>
-                  {isMobile ? '📧 Email' : 'madhajaswanth@gmail.com'}
+                  {isMobile ? 'EMAIL ME' : 'SEND EMAIL'}
                 </button>
               </a>
               <a
@@ -75,13 +75,13 @@ const SectionAbout = (props) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className={styles['secondary-button']}>LinkedIn</button>
+                <button className={styles['secondary-button']}>LINKEDIN</button>
               </a>
               <button
                 className={styles['secondary-button']}
                 onClick={openResumePreview}
               >
-                📄 Resume
+                VIEW RESUME
               </button>
             </div>
 
