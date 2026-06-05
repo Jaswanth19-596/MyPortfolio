@@ -583,11 +583,6 @@ const ProjectsSection = function () {
           company: 'Accessifiers',
           duration: 'Aug 2025 – Present • Remote',
         },
-        {
-          title: 'Machine Learning Engineer',
-          company: 'Sage Softech',
-          duration: 'Mar 2022 - Jul 2023',
-        },
       ];
 
       return (
